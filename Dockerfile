@@ -298,6 +298,228 @@ RUN apt-get --assume-yes update \
 
 FROM gcc-${TARGETARCH} AS gcc
 
+# ############################################################################
+#
+# All architectures maintenance for GNU Objective-C/C++ compiler
+#
+# ############################################################################
+
+FROM gcc AS gobjc-all
+
+# ############################################################################
+#
+# AMD/x86 64-bit architecture maintenance for GNU Objective-C/C++ compiler (multilib)
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gobjc-all AS gobjc-amd64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gobjc-10 \
+    gobjc-10-multilib \
+    gobjc++-10 \
+    gobjc++-10-multilib \
+    gobjc-11 \
+    gobjc-11-multilib \
+    gobjc++-11 \
+    gobjc++-11-multilib \
+    gobjc-12 \
+    gobjc-12-multilib \
+    gobjc++-12 \
+    gobjc++-12-multilib \
+    gobjc \
+    gobjc-mingw-w64 \
+    gobjc-multilib \
+    gobjc++ \
+    gobjc++-mingw-w64 \
+    gobjc++-multilib \
+    gobjc-14 \
+    gobjc-14-multilib \
+    gobjc++-14 \
+    gobjc++-14-multilib \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv7 32-bit architecture maintenance for GNU Objective-C/C++ compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gobjc-all AS gobjc-arm
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gobjc-10 \
+    gobjc++-10 \
+    gobjc-11 \
+    gobjc++-11 \
+    gobjc-12 \
+    gobjc++-12 \
+    gobjc \
+    gobjc-mingw-w64 \
+    gobjc++ \
+    gobjc++-mingw-w64 \
+    gobjc-14 \
+    gobjc++-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv8 64-bit architecture maintenance for GNU Objective-C/C++ compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gobjc-all AS gobjc-arm64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gobjc-10 \
+    gobjc++-10 \
+    gobjc-11 \
+    gobjc++-11 \
+    gobjc-12 \
+    gobjc++-12 \
+    gobjc \
+    gobjc-mingw-w64 \
+    gobjc++ \
+    gobjc++-mingw-w64 \
+    gobjc-14 \
+    gobjc++-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# RISC-V 64-bit architecture maintenance for GNU Objective-C/C++ compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gobjc-all AS gobjc-riscv64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gobjc-10 \
+    gobjc++-10 \
+    gobjc-11 \
+    gobjc++-11 \
+    gobjc-12 \
+    gobjc++-12 \
+    gobjc \
+    gobjc-mingw-w64 \
+    gobjc++ \
+    gobjc++-mingw-w64 \
+    gobjc-14 \
+    gobjc++-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM POWER8 architecture maintenance for GNU Objective-C/C++ compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gobjc-all AS gobjc-ppc64le
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gobjc-10 \
+    gobjc++-10 \
+    gobjc-11 \
+    gobjc++-11 \
+    gobjc-12 \
+    gobjc++-12 \
+    gobjc \
+    gobjc-mingw-w64 \
+    gobjc++ \
+    gobjc++-mingw-w64 \
+    gobjc-14 \
+    gobjc++-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM z-Systems architecture maintenance for GNU Objective-C/C++ compiler (multilib)
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gobjc-all AS gobjc-s390x
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gobjc-10 \
+    gobjc-10-multilib \
+    gobjc++-10 \
+    gobjc++-10-multilib \
+    gobjc-11 \
+    gobjc-11-multilib \
+    gobjc++-11 \
+    gobjc++-11-multilib \
+    gobjc-12 \
+    gobjc-12-multilib \
+    gobjc++-12 \
+    gobjc++-12-multilib \
+    gobjc \
+    gobjc-mingw-w64 \
+    gobjc-multilib \
+    gobjc++ \
+    gobjc++-mingw-w64 \
+    gobjc++-multilib \
+    gobjc-14 \
+    gobjc-14-multilib \
+    gobjc++-14 \
+    gobjc++-14-multilib \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for GNU Objective-C/C++ compiler
+#
+# ############################################################################
+
+FROM gobjc-${TARGETARCH} AS gobjc
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME

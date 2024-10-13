@@ -57,30 +57,54 @@ Ubuntu system packages
    :widths: 5 65 5 5 5 5 5 5
    :stub-columns: 1
 
-   " ", "|gcc-name|_",                " ", " ", " ", " ", " ", " "
-   " ", "|gcc-10-version|_",          "x", "x", "x", "x", "x", "x"
-   " ", "|gcc-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
-   " ", "|gcc-11-version|_",          "x", "x", "x", "x", "x", "x"
-   " ", "|gcc-11-multilib-version|_", "x", " ", " ", " ", " ", "x"
-   " ", "|gcc-12-version|_",          "x", "x", "x", "x", "x", "x"
-   " ", "|gcc-12-multilib-version|_", "x", " ", " ", " ", " ", "x"
-   "x", "|gcc-version|_",             "x", "x", "x", "x", "x", "x"
-   "x", "|gcc-multilib-version|_",    "x", " ", " ", " ", " ", "x"
-   "x", "|gcc-mingw-w64-version|_",   "x", "x", "x", "x", "x", "x"
-   " ", "|gcc-14-version|_",          "x", "x", "x", "x", "x", "x"
-   " ", "|gcc-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
-   " ", "|g++-name|_",                " ", " ", " ", " ", " ", " "
-   " ", "|g++-10-version|_",          "x", "x", "x", "x", "x", "x"
-   " ", "|g++-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
-   " ", "|g++-11-version|_",          "x", "x", "x", "x", "x", "x"
-   " ", "|g++-11-multilib-version|_", "x", " ", " ", " ", " ", "x"
-   " ", "|g++-12-version|_",          "x", "x", "x", "x", "x", "x"
-   " ", "|g++-12-multilib-version|_", "x", " ", " ", " ", " ", "x"
-   "x", "|g++-version|_",             "x", "x", "x", "x", "x", "x"
-   "x", "|g++-multilib-version|_",    "x", " ", " ", " ", " ", "x"
-   "x", "|g++-mingw-w64-version|_",   "x", "x", "x", "x", "x", "x"
-   " ", "|g++-14-version|_",          "x", "x", "x", "x", "x", "x"
-   " ", "|g++-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gcc-name|_",                    " ", " ", " ", " ", " ", " "
+   " ", "|gcc-10-version|_",              "x", "x", "x", "x", "x", "x"
+   " ", "|gcc-10-multilib-version|_",     "x", " ", " ", " ", " ", "x"
+   " ", "|gcc-11-version|_",              "x", "x", "x", "x", "x", "x"
+   " ", "|gcc-11-multilib-version|_",     "x", " ", " ", " ", " ", "x"
+   " ", "|gcc-12-version|_",              "x", "x", "x", "x", "x", "x"
+   " ", "|gcc-12-multilib-version|_",     "x", " ", " ", " ", " ", "x"
+   "x", "|gcc-version|_",                 "x", "x", "x", "x", "x", "x"
+   "x", "|gcc-multilib-version|_",        "x", " ", " ", " ", " ", "x"
+   "x", "|gcc-mingw-w64-version|_",       "x", "x", "x", "x", "x", "x"
+   " ", "|gcc-14-version|_",              "x", "x", "x", "x", "x", "x"
+   " ", "|gcc-14-multilib-version|_",     "x", " ", " ", " ", " ", "x"
+   " ", "|g++-name|_",                    " ", " ", " ", " ", " ", " "
+   " ", "|g++-10-version|_",              "x", "x", "x", "x", "x", "x"
+   " ", "|g++-10-multilib-version|_",     "x", " ", " ", " ", " ", "x"
+   " ", "|g++-11-version|_",              "x", "x", "x", "x", "x", "x"
+   " ", "|g++-11-multilib-version|_",     "x", " ", " ", " ", " ", "x"
+   " ", "|g++-12-version|_",              "x", "x", "x", "x", "x", "x"
+   " ", "|g++-12-multilib-version|_",     "x", " ", " ", " ", " ", "x"
+   "x", "|g++-version|_",                 "x", "x", "x", "x", "x", "x"
+   "x", "|g++-multilib-version|_",        "x", " ", " ", " ", " ", "x"
+   "x", "|g++-mingw-w64-version|_",       "x", "x", "x", "x", "x", "x"
+   " ", "|g++-14-version|_",              "x", "x", "x", "x", "x", "x"
+   " ", "|g++-14-multilib-version|_",     "x", " ", " ", " ", " ", "x"
+   " ", "|gobjc-name|_",                  " ", " ", " ", " ", " ", " "
+   " ", "|gobjc-10-version|_",            "x", "x", "x", "x", "x", "x"
+   " ", "|gobjc-10-multilib-version|_",   "x", " ", " ", " ", " ", "x"
+   " ", "|gobjc-11-version|_",            "x", "x", "x", "x", "x", "x"
+   " ", "|gobjc-11-multilib-version|_",   "x", " ", " ", " ", " ", "x"
+   " ", "|gobjc-12-version|_",            "x", "x", "x", "x", "x", "x"
+   " ", "|gobjc-12-multilib-version|_",   "x", " ", " ", " ", " ", "x"
+   "x", "|gobjc-version|_",               "x", "x", "x", "x", "x", "x"
+   "x", "|gobjc-multilib-version|_",      "x", " ", " ", " ", " ", "x"
+   "x", "|gobjc-mingw-w64-version|_",     "x", "x", "x", "x", "x", "x"
+   " ", "|gobjc-14-version|_",            "x", "x", "x", "x", "x", "x"
+   " ", "|gobjc-14-multilib-version|_",   "x", " ", " ", " ", " ", "x"
+   " ", "|gobjc++-name|_",                " ", " ", " ", " ", " ", " "
+   " ", "|gobjc++-10-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gobjc++-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gobjc++-11-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gobjc++-11-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gobjc++-12-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gobjc++-12-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   "x", "|gobjc++-version|_",             "x", "x", "x", "x", "x", "x"
+   "x", "|gobjc++-multilib-version|_",    "x", " ", " ", " ", " ", "x"
+   "x", "|gobjc++-mingw-w64-version|_",   "x", "x", "x", "x", "x", "x"
+   " ", "|gobjc++-14-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gobjc++-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
 
 .. [*] Default version.
 
@@ -155,6 +179,78 @@ Ubuntu system packages
 
 .. |g++-14-multilib-version| replace:: |____| → multilib files
 .. _`g++-14-multilib-version`: https://packages.ubuntu.com/noble/g++-14-multilib
+
+.. |gobjc-name| replace:: :strong:`GNU Objective-C compiler`
+.. _`gobjc-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gobjc
+
+.. |gobjc++-name| replace:: :strong:`GNU Objective-C++ compiler`
+.. _`gobjc++-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gobjc%2B%2B
+
+.. |gobjc-10-version| replace:: :strong:`v10.5`
+.. _`gobjc-10-version`: https://packages.ubuntu.com/noble/gobjc-10
+
+.. |gobjc-10-multilib-version| replace:: |____| → multilib files
+.. _`gobjc-10-multilib-version`: https://packages.ubuntu.com/noble/gobjc-10-multilib
+
+.. |gobjc++-10-version| replace:: :strong:`v10.5`
+.. _`gobjc++-10-version`: https://packages.ubuntu.com/noble/gobjc++-10
+
+.. |gobjc++-10-multilib-version| replace:: |____| → multilib files
+.. _`gobjc++-10-multilib-version`: https://packages.ubuntu.com/noble/gobjc++-10-multilib
+
+.. |gobjc-11-version| replace:: :strong:`v11.4`
+.. _`gobjc-11-version`: https://packages.ubuntu.com/noble/gobjc-11
+
+.. |gobjc-11-multilib-version| replace:: |____| → multilib files
+.. _`gobjc-11-multilib-version`: https://packages.ubuntu.com/noble/gobjc-11-multilib
+
+.. |gobjc++-11-version| replace:: :strong:`v11.4`
+.. _`gobjc++-11-version`: https://packages.ubuntu.com/noble/gobjc++-11
+
+.. |gobjc++-11-multilib-version| replace:: |____| → multilib files
+.. _`gobjc++-11-multilib-version`: https://packages.ubuntu.com/noble/gobjc++-11-multilib
+
+.. |gobjc-12-version| replace:: :strong:`v12.3`
+.. _`gobjc-12-version`: https://packages.ubuntu.com/noble/gobjc-12
+
+.. |gobjc-12-multilib-version| replace:: |____| → multilib files
+.. _`gobjc-12-multilib-version`: https://packages.ubuntu.com/noble/gobjc-12-multilib
+
+.. |gobjc++-12-version| replace:: :strong:`v12.3`
+.. _`gobjc++-12-version`: https://packages.ubuntu.com/noble/gobjc++-12
+
+.. |gobjc++-12-multilib-version| replace:: |____| → multilib files
+.. _`gobjc++-12-multilib-version`: https://packages.ubuntu.com/noble/gobjc++-12-multilib
+
+.. |gobjc-version| replace:: :strong:`v13.2`
+.. _`gobjc-version`: https://packages.ubuntu.com/noble/gobjc
+
+.. |gobjc-multilib-version| replace:: |____| → multilib files
+.. _`gobjc-multilib-version`: https://packages.ubuntu.com/noble/gobjc-multilib
+
+.. |gobjc-mingw-w64-version| replace:: |____| → for MinGW-w64
+.. _`gobjc-mingw-w64-version`: https://packages.ubuntu.com/noble/gobjc-mingw-w64
+
+.. |gobjc++-version| replace:: :strong:`v13.2`
+.. _`gobjc++-version`: https://packages.ubuntu.com/noble/gobjc++
+
+.. |gobjc++-multilib-version| replace:: |____| → multilib files
+.. _`gobjc++-multilib-version`: https://packages.ubuntu.com/noble/gobjc++-multilib
+
+.. |gobjc++-mingw-w64-version| replace:: |____| → for MinGW-w64
+.. _`gobjc++-mingw-w64-version`: https://packages.ubuntu.com/noble/gobjc++-mingw-w64
+
+.. |gobjc-14-version| replace:: :strong:`v14`
+.. _`gobjc-14-version`: https://packages.ubuntu.com/noble/gobjc-14
+
+.. |gobjc-14-multilib-version| replace:: |____| → multilib files
+.. _`gobjc-14-multilib-version`: https://packages.ubuntu.com/noble/gobjc-14-multilib
+
+.. |gobjc++-14-version| replace:: :strong:`v14`
+.. _`gobjc++-14-version`: https://packages.ubuntu.com/noble/gobjc++-14
+
+.. |gobjc++-14-multilib-version| replace:: |____| → multilib files
+.. _`gobjc++-14-multilib-version`: https://packages.ubuntu.com/noble/gobjc++-14-multilib
 
 .. References
 .. ----------
