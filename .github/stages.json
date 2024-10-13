@@ -7,6 +7,7 @@
 		{ "stage": "gccgo" },
 		{ "stage": "gfortran" },
 		{ "stage": "gm2" },
+		{ "stage": "gnat" },
 		{ "stage": "push", "ghr-free-disk": true }
 	]
 }

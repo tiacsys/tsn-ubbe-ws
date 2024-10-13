@@ -1018,6 +1018,37 @@ RUN apt-get --assume-yes update \
 
 FROM gm2-all AS gm2
 
+# ############################################################################
+#
+# All architectures maintenance for GNU Ada compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gm2 AS gnat-all
+
+# ############################################################################
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gnat \
+    gnat-mingw-w64 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for GNU Ada compiler
+#
+# ############################################################################
+
+FROM gnat-all AS gnat
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME
