@@ -1,6 +1,7 @@
 {
 	"include": [
 		{ "stage": "base" },
+		{ "stage": "gcc" },
 		{ "stage": "push", "ghr-free-disk": true }
 	]
 }
