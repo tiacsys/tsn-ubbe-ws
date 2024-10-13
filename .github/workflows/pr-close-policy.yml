@@ -1,0 +1,15 @@
+name: PR Close Policy
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  setup:
+    name: Setup
+
+    # Delete the "pr-#" tagged Docker images when a pull request is closed.
+    uses: tiacsys/github-workflows/.github/workflows/docker-mr-proper.yml@v1
+    with:
+      delete-tags: pr-${{github.event.pull_request.number}}
+    secrets: inherit # pass all secrets

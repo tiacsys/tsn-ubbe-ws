@@ -1,0 +1,18 @@
+name: Retention Policy
+
+on:
+  workflow_dispatch: # And manually on button click
+  schedule:
+    # every day at 00:05 UTC
+    - cron: '5 0 * * *'
+
+jobs:
+  setup:
+    name: Setup
+
+    # Delete all untagged Docker images older than 2 weeks.
+    uses: tiacsys/github-workflows/.github/workflows/docker-retention.yml@v1
+    with:
+      older-than: 2 weeks
+      exclude-tags: "^\\d+\\.\\d+\\.\\d+$|^latest$|^main$|^nightly$"
+    secrets: inherit # pass all secrets

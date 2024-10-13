@@ -1,0 +1,47 @@
+name: Docker
+
+on:
+  schedule:
+    # every day at 01:00 UTC
+    # https://crontab.guru/#0_1_*_*_*
+    - cron: '0 1 * * *'
+  push:
+    branches:
+      - 'main'
+    # Publish calver or pep440 tags as releases.
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+      - '[0-9]+.[0-9]+.[0-9]+rc[0-9]+'
+    paths:
+      - '.github/workflows/docker-publish.yml'
+      - '.github/workflows/retry-workflow.yml'
+      - '.github/platforms.json'
+      - '.github/stages.json'
+      - '.dockerignore'
+      - 'Dockerfile'
+  pull_request:
+    branches:
+      - 'main'
+    paths:
+      - '.github/workflows/docker-publish.yml'
+      - '.github/workflows/retry-workflow.yml'
+      - '.github/platforms.json'
+      - '.github/stages.json'
+      - '.dockerignore'
+      - 'Dockerfile'
+
+jobs:
+  setup:
+    name: Setup
+
+    # Build all multi-platform Docker images, all stages. The specified
+    # stages (in ./.github/stages.json) are built one after the other
+    # for the specified platforms (in ./.github/platforms.json) and,
+    # if successful, are finally merged via a Docker manifest and
+    # published to the Docker registry on GitHub.
+    uses: tiacsys/github-workflows/.github/workflows/docker-stages.yml@v1
+    with:
+      ghr-free-disk: false
+      platforms-json: ./.github/platforms.json
+      stages-json: ./.github/stages.json
+    secrets: inherit # pass all secrets
