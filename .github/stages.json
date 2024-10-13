@@ -4,6 +4,7 @@
 		{ "stage": "gcc" },
 		{ "stage": "gobjc" },
 		{ "stage": "gdc" },
+		{ "stage": "gccgo" },
 		{ "stage": "push", "ghr-free-disk": true }
 	]
 }

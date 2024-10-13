@@ -666,6 +666,152 @@ RUN apt-get --assume-yes update \
 
 FROM gdc-${TARGETARCH} AS gdc
 
+# ############################################################################
+#
+# All architectures maintenance for GNU Go compiler
+#
+# ############################################################################
+
+FROM gdc AS gccgo-all
+
+# ############################################################################
+#
+# AMD/x86 64-bit architecture maintenance for GNU Go compiler (multilib)
+#
+# ############################################################################
+
+FROM gccgo-all AS gccgo-amd64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gccgo-10 \
+    gccgo-10-multilib \
+    gccgo-11 \
+    gccgo-11-multilib \
+    gccgo-12 \
+    gccgo-12-multilib \
+    gccgo \
+    gccgo-multilib \
+    gccgo-14 \
+    gccgo-14-multilib \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv7 32-bit architecture maintenance for GNU Go compiler
+#
+# ############################################################################
+
+FROM gccgo-all AS gccgo-arm
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gccgo-10 \
+    gccgo-11 \
+    gccgo-12 \
+    gccgo \
+    gccgo-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv8 64-bit architecture maintenance for GNU Go compiler
+#
+# ############################################################################
+
+FROM gccgo-all AS gccgo-arm64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gccgo-10 \
+    gccgo-11 \
+    gccgo-12 \
+    gccgo \
+    gccgo-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# RISC-V 64-bit architecture maintenance for GNU Go compiler
+#
+# ############################################################################
+
+FROM gccgo-all AS gccgo-riscv64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gccgo-10 \
+    gccgo-11 \
+    gccgo-12 \
+    gccgo \
+    gccgo-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM POWER8 architecture maintenance for GNU Go compiler
+#
+# ############################################################################
+
+FROM gccgo-all AS gccgo-ppc64le
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gccgo-10 \
+    gccgo-11 \
+    gccgo-12 \
+    gccgo \
+    gccgo-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM z-Systems architecture maintenance for GNU Go compiler (multilib)
+#
+# ############################################################################
+
+FROM gccgo-all AS gccgo-s390x
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gccgo-10 \
+    gccgo-10-multilib \
+    gccgo-11 \
+    gccgo-11-multilib \
+    gccgo-12 \
+    gccgo-12-multilib \
+    gccgo \
+    gccgo-multilib \
+    gccgo-14 \
+    gccgo-14-multilib \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for GNU Go compiler
+#
+# ############################################################################
+
+FROM gccgo-${TARGETARCH} AS gccgo
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME
