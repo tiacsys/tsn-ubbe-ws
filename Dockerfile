@@ -1138,6 +1138,45 @@ RUN apt-get --assume-yes update \
 
 FROM meta-all AS meta
 
+# ############################################################################
+#
+# All architectures maintenance for GNU development tools
+#
+# ############################################################################
+
+FROM meta AS gnu-all
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    autoconf-dickey \
+    autoconf2.13 \
+    autoconf2.69 \
+    autoconf2.64 \
+    autoconf \
+    autoconf-archive \
+    autogen \
+    automake1.11 \
+    automake \
+    autopoint \
+    gettext \
+    gperf \
+    libtool \
+    libltdl-dev \
+    make-guile \
+    pkg-config \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for GNU development tools
+#
+# ############################################################################
+
+FROM gnu-all AS gnu
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME
