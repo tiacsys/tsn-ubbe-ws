@@ -1049,6 +1049,31 @@ RUN apt-get --assume-yes update \
 
 FROM gnat-all AS gnat
 
+# ############################################################################
+#
+# All architectures maintenance for Forth Programming Tools
+# - GNU Forth Language Environment
+#
+# ############################################################################
+
+FROM gnat AS forth-all
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gforth \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for Forth Programming Tools
+#
+# ############################################################################
+
+FROM forth-all AS forth
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME

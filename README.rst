@@ -482,6 +482,19 @@ Ubuntu system packages
 .. |gnat-14-version| replace:: :strong:`v14`
 .. _`gnat-14-version`: https://packages.ubuntu.com/noble/gnat-14
 
+.. csv-table:: Forth programming
+   :header: "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 70 5 5 5 5 5 5
+
+   "|gforth-name|_",    " ", " ", " ", " ", " ", " "
+   "|gforth-version|_", "x", "x", "x", "x", "x", "x"
+
+.. |gforth-name| replace:: :strong:`GNU Forth Language Environment`
+.. _`gforth-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gforth
+
+.. |gforth-version| replace:: :strong:`v0.7.3`
+.. _`gforth-version`: https://packages.ubuntu.com/noble/gforth
+
 .. References
 .. ----------
 
