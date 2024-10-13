@@ -2,6 +2,7 @@
 	"include": [
 		{ "stage": "base" },
 		{ "stage": "gcc" },
+		{ "stage": "gobjc" },
 		{ "stage": "push", "ghr-free-disk": true }
 	]
 }
