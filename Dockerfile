@@ -988,6 +988,36 @@ RUN apt-get --assume-yes update \
 
 FROM gfortran-${TARGETARCH} AS gfortran
 
+# ############################################################################
+#
+# All architectures maintenance for GNU Modula-2 compiler
+#
+# ############################################################################
+
+FROM gfortran AS gm2-all
+
+# ############################################################################
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gm2-10 \
+    gm2-11 \
+    gm2-12 \
+    gm2 \
+    gm2-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for GNU Modula-2 compiler
+#
+# ############################################################################
+
+FROM gm2-all AS gm2
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME

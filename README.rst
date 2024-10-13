@@ -413,6 +413,38 @@ Ubuntu system packages
 .. |gfortran-14-multilib-version| replace:: |____| → multilib files
 .. _`gfortran-14-multilib-version`: https://packages.ubuntu.com/noble/gfortran-14-multilib
 
+.. csv-table:: Modula-2 programming
+   :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 5 65 5 5 5 5 5 5
+   :stub-columns: 1
+
+   " ", "|gm2-name|_",       " ", " ", " ", " ", " ", " "
+   " ", "|gm2-10-version|_", "x", "x", "x", "x", "x", "x"
+   " ", "|gm2-11-version|_", "x", "x", "x", "x", "x", "x"
+   " ", "|gm2-12-version|_", "x", "x", "x", "x", "x", "x"
+   "x", "|gm2-version|_",    "x", "x", "x", "x", "x", "x"
+   " ", "|gm2-14-version|_", "x", "x", "x", "x", "x", "x"
+
+.. [*] Default version.
+
+.. |gm2-name| replace:: :strong:`GNU Modula-2 compiler`
+.. _`gm2-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gm2
+
+.. |gm2-10-version| replace:: :strong:`v10.5`
+.. _`gm2-10-version`: https://packages.ubuntu.com/noble/gm2-10
+
+.. |gm2-11-version| replace:: :strong:`v11.4`
+.. _`gm2-11-version`: https://packages.ubuntu.com/noble/gm2-11
+
+.. |gm2-12-version| replace:: :strong:`v12.3`
+.. _`gm2-12-version`: https://packages.ubuntu.com/noble/gm2-12
+
+.. |gm2-version| replace:: :strong:`v13.2`
+.. _`gm2-version`: https://packages.ubuntu.com/noble/gm2
+
+.. |gm2-14-version| replace:: :strong:`v14`
+.. _`gm2-14-version`: https://packages.ubuntu.com/noble/gm2-14
+
 .. References
 .. ----------
 

@@ -6,6 +6,7 @@
 		{ "stage": "gdc" },
 		{ "stage": "gccgo" },
 		{ "stage": "gfortran" },
+		{ "stage": "gm2" },
 		{ "stage": "push", "ghr-free-disk": true }
 	]
 }
