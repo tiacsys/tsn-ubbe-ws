@@ -52,6 +52,81 @@ Ubuntu system packages
 .. |build-essential-version| replace:: list of build-essential packages :strong:`v12.10`
 .. _`build-essential-version`: https://packages.ubuntu.com/noble/build-essential
 
+.. rubric:: GNU development tools
+
+- |gperf-version|_
+- |make-guile-version|_
+- |pkg-config-version|_
+
+.. |gperf-version| replace:: GNU gperf :strong:`v3.1`
+.. _`gperf-version`: https://packages.ubuntu.com/noble/gperf
+
+.. |make-guile-version| replace:: GNU Make with Guile support :strong:`v4.3`
+.. _`make-guile-version`: https://packages.ubuntu.com/noble/make-guile
+
+.. |pkg-config-version| replace:: pkgconf (pkg-config) :strong:`v1.8.1`
+.. _`pkg-config-version`: https://packages.ubuntu.com/noble/pkg-config
+
+.. rubric:: GNU autotools
+
+- |autoconf-dickey-version|_
+- |autoconf2.13-version|_
+- |autoconf2.64-version|_
+- |autoconf2.69-version|_
+- |autoconf-version|_
+
+  - |autoconf-archive-version|_
+
+- |automake1.11-version|_
+- |automake-version|_
+- |autogen-version|_
+- |gettext-version|_
+
+  - |autopoint-version|_, for setting up gettext infrastructure
+
+- |libtool-version|_
+
+  - |libltdl-dev-version|_, system independent dlopen wrapper
+
+.. |autoconf-dickey-version| replace:: GNU autoconf (Thomas Dickey's version) :strong:`v2.52`
+.. _`autoconf-dickey-version`: https://packages.ubuntu.com/noble/autoconf-dickey
+
+.. |autoconf2.13-version| replace:: GNU autoconf :strong:`v2.13`
+.. _`autoconf2.13-version`: https://packages.ubuntu.com/noble/autoconf2.13
+
+.. |autoconf2.64-version| replace:: GNU autoconf :strong:`v2.64`
+.. _`autoconf2.64-version`: https://packages.ubuntu.com/noble/autoconf2.64
+
+.. |autoconf2.69-version| replace:: GNU autoconf :strong:`v2.69`
+.. _`autoconf2.69-version`: https://packages.ubuntu.com/noble/autoconf2.69
+
+.. |autoconf-version| replace:: GNU autoconf :strong:`v2.71`
+.. _`autoconf-version`: https://packages.ubuntu.com/noble/autoconf
+
+.. |autoconf-archive-version| replace:: Autoconf Macro Archive :strong:`20220903`
+.. _`autoconf-archive-version`: https://packages.ubuntu.com/noble/autoconf-archive
+
+.. |automake1.11-version| replace:: GNU automake :strong:`v1.11`
+.. _`automake1.11-version`: https://packages.ubuntu.com/noble/automake1.11
+
+.. |automake-version| replace:: GNU automake :strong:`v1.16`
+.. _`automake-version`: https://packages.ubuntu.com/noble/automake
+
+.. |autogen-version| replace:: GNU autogen :strong:`v5.18.16`
+.. _`autogen-version`: https://packages.ubuntu.com/noble/autogen
+
+.. |gettext-version| replace:: GNU gettext :strong:`v0.21`
+.. _`gettext-version`: https://packages.ubuntu.com/noble/gettext
+
+.. |autopoint-version| replace:: GNU autopoint :strong:`v0.21`
+.. _`autopoint-version`: https://packages.ubuntu.com/noble/autopoint
+
+.. |libtool-version| replace:: GNU libtool :strong:`v2.4.7`
+.. _`libtool-version`: https://packages.ubuntu.com/noble/libtool
+
+.. |libltdl-dev-version| replace:: GNU libtool (headers) :strong:`v2.4.7`
+.. _`libltdl-dev-version`: https://packages.ubuntu.com/noble/libltdl-dev
+
 .. csv-table:: C/C++ and Objective-C/C++ programming
    :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
    :widths: 5 65 5 5 5 5 5 5
