@@ -252,6 +252,58 @@ Ubuntu system packages
 .. |gobjc++-14-multilib-version| replace:: |____| → multilib files
 .. _`gobjc++-14-multilib-version`: https://packages.ubuntu.com/noble/gobjc++-14-multilib
 
+.. csv-table:: Digital Mars D programming
+   :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 5 65 5 5 5 5 5 5
+   :stub-columns: 1
+
+   " ", "|gdc-name|_",                " ", " ", " ", " ", " ", " "
+   " ", "|gdc-10-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gdc-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gdc-11-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gdc-11-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gdc-12-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gdc-12-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   "x", "|gdc-version|_",             "x", "x", "x", "x", "x", "x"
+   "x", "|gdc-multilib-version|_",    "x", " ", " ", " ", " ", "x"
+   " ", "|gdc-14-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gdc-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
+
+.. [*] Default version.
+
+.. |gdc-name| replace:: :strong:`GNU D compiler`
+.. _`gdc-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gdc
+
+.. |gdc-10-version| replace:: :strong:`v10.5`
+.. _`gdc-10-version`: https://packages.ubuntu.com/noble/gdc-10
+
+.. |gdc-10-multilib-version| replace:: |____| → multilib files
+.. _`gdc-10-multilib-version`: https://packages.ubuntu.com/noble/gdc-10-multilib
+
+.. |gdc-11-version| replace:: :strong:`v11.4`
+.. _`gdc-11-version`: https://packages.ubuntu.com/noble/gdc-11
+
+.. |gdc-11-multilib-version| replace:: |____| → multilib files
+.. _`gdc-11-multilib-version`: https://packages.ubuntu.com/noble/gdc-11-multilib
+
+.. |gdc-12-version| replace:: :strong:`v12.3`
+.. _`gdc-12-version`: https://packages.ubuntu.com/noble/gdc-12
+
+.. |gdc-12-multilib-version| replace:: |____| → multilib files
+.. _`gdc-12-multilib-version`: https://packages.ubuntu.com/noble/gdc-12-multilib
+
+.. |gdc-version| replace:: :strong:`v13.2`
+.. _`gdc-version`: https://packages.ubuntu.com/noble/gdc
+
+.. |gdc-multilib-version| replace:: |____| → multilib files
+.. _`gdc-multilib-version`: https://packages.ubuntu.com/noble/gdc-multilib
+
+.. |gdc-14-version| replace:: :strong:`v14`
+.. _`gdc-14-version`: https://packages.ubuntu.com/noble/gdc-14
+
+.. |gdc-14-multilib-version| replace:: |____| → multilib files
+.. _`gdc-14-multilib-version`: https://packages.ubuntu.com/noble/gdc-14-multilib
+
 .. References
 .. ----------
 

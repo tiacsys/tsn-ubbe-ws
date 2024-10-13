@@ -520,6 +520,152 @@ RUN apt-get --assume-yes update \
 
 FROM gobjc-${TARGETARCH} AS gobjc
 
+# ############################################################################
+#
+# All architectures maintenance for GNU D compiler
+#
+# ############################################################################
+
+FROM gobjc AS gdc-all
+
+# ############################################################################
+#
+# AMD/x86 64-bit architecture maintenance for GNU D compiler (multilib)
+#
+# ############################################################################
+
+FROM gdc-all AS gdc-amd64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gdc-10 \
+    gdc-10-multilib \
+    gdc-11 \
+    gdc-11-multilib \
+    gdc-12 \
+    gdc-12-multilib \
+    gdc \
+    gdc-multilib \
+    gdc-14 \
+    gdc-14-multilib \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv7 32-bit architecture maintenance for GNU D compiler
+#
+# ############################################################################
+
+FROM gdc-all AS gdc-arm
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gdc-10 \
+    gdc-11 \
+    gdc-12 \
+    gdc \
+    gdc-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv8 64-bit architecture maintenance for GNU D compiler
+#
+# ############################################################################
+
+FROM gdc-all AS gdc-arm64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gdc-10 \
+    gdc-11 \
+    gdc-12 \
+    gdc \
+    gdc-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# RISC-V 64-bit architecture maintenance for GNU D compiler
+#
+# ############################################################################
+
+FROM gdc-all AS gdc-riscv64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gdc-10 \
+    gdc-11 \
+    gdc-12 \
+    gdc \
+    gdc-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM POWER8 architecture maintenance for GNU D compiler
+#
+# ############################################################################
+
+FROM gdc-all AS gdc-ppc64le
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gdc-10 \
+    gdc-11 \
+    gdc-12 \
+    gdc \
+    gdc-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM z-Systems architecture maintenance for GNU D compiler (multilib)
+#
+# ############################################################################
+
+FROM gdc-all AS gdc-s390x
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gdc-10 \
+    gdc-10-multilib \
+    gdc-11 \
+    gdc-11-multilib \
+    gdc-12 \
+    gdc-12-multilib \
+    gdc \
+    gdc-multilib \
+    gdc-14 \
+    gdc-14-multilib \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for GNU D compiler
+#
+# ############################################################################
+
+FROM gdc-${TARGETARCH} AS gdc
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME
