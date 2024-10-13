@@ -8,6 +8,7 @@
 		{ "stage": "gfortran" },
 		{ "stage": "gm2" },
 		{ "stage": "gnat" },
+		{ "stage": "forth", "ghr-free-disk": true },
 		{ "stage": "push", "ghr-free-disk": true }
 	]
 }
