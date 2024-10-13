@@ -304,6 +304,58 @@ Ubuntu system packages
 .. |gdc-14-multilib-version| replace:: |____| → multilib files
 .. _`gdc-14-multilib-version`: https://packages.ubuntu.com/noble/gdc-14-multilib
 
+.. csv-table:: Go programming
+   :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 5 65 5 5 5 5 5 5
+   :stub-columns: 1
+
+   " ", "|gccgo-name|_",                " ", " ", " ", " ", " ", " "
+   " ", "|gccgo-10-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gccgo-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gccgo-11-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gccgo-11-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gccgo-12-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gccgo-12-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   "x", "|gccgo-version|_",             "x", "x", "x", "x", "x", "x"
+   "x", "|gccgo-multilib-version|_",    "x", " ", " ", " ", " ", "x"
+   " ", "|gccgo-14-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gccgo-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
+
+.. [*] Default version.
+
+.. |gccgo-name| replace:: :strong:`GNU Go compiler`
+.. _`gccgo-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gccgo
+
+.. |gccgo-10-version| replace:: :strong:`v10.5`
+.. _`gccgo-10-version`: https://packages.ubuntu.com/noble/gccgo-10
+
+.. |gccgo-10-multilib-version| replace:: |____| → multilib files
+.. _`gccgo-10-multilib-version`: https://packages.ubuntu.com/noble/gccgo-10-multilib
+
+.. |gccgo-11-version| replace:: :strong:`v11.4`
+.. _`gccgo-11-version`: https://packages.ubuntu.com/noble/gccgo-11
+
+.. |gccgo-11-multilib-version| replace:: |____| → multilib files
+.. _`gccgo-11-multilib-version`: https://packages.ubuntu.com/noble/gccgo-11-multilib
+
+.. |gccgo-12-version| replace:: :strong:`v12.3`
+.. _`gccgo-12-version`: https://packages.ubuntu.com/noble/gccgo-12
+
+.. |gccgo-12-multilib-version| replace:: |____| → multilib files
+.. _`gccgo-12-multilib-version`: https://packages.ubuntu.com/noble/gccgo-12-multilib
+
+.. |gccgo-version| replace:: :strong:`v13.2`
+.. _`gccgo-version`: https://packages.ubuntu.com/noble/gccgo
+
+.. |gccgo-multilib-version| replace:: |____| → multilib files
+.. _`gccgo-multilib-version`: https://packages.ubuntu.com/noble/gccgo-multilib
+
+.. |gccgo-14-version| replace:: :strong:`v14`
+.. _`gccgo-14-version`: https://packages.ubuntu.com/noble/gccgo-14
+
+.. |gccgo-14-multilib-version| replace:: |____| → multilib files
+.. _`gccgo-14-multilib-version`: https://packages.ubuntu.com/noble/gccgo-14-multilib
+
 .. References
 .. ----------
 
