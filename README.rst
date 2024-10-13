@@ -52,6 +52,110 @@ Ubuntu system packages
 .. |build-essential-version| replace:: list of build-essential packages :strong:`v12.10`
 .. _`build-essential-version`: https://packages.ubuntu.com/noble/build-essential
 
+.. csv-table:: C/C++ and Objective-C/C++ programming
+   :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 5 65 5 5 5 5 5 5
+   :stub-columns: 1
+
+   " ", "|gcc-name|_",                " ", " ", " ", " ", " ", " "
+   " ", "|gcc-10-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gcc-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gcc-11-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gcc-11-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gcc-12-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gcc-12-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   "x", "|gcc-version|_",             "x", "x", "x", "x", "x", "x"
+   "x", "|gcc-multilib-version|_",    "x", " ", " ", " ", " ", "x"
+   "x", "|gcc-mingw-w64-version|_",   "x", "x", "x", "x", "x", "x"
+   " ", "|gcc-14-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gcc-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|g++-name|_",                " ", " ", " ", " ", " ", " "
+   " ", "|g++-10-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|g++-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|g++-11-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|g++-11-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|g++-12-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|g++-12-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   "x", "|g++-version|_",             "x", "x", "x", "x", "x", "x"
+   "x", "|g++-multilib-version|_",    "x", " ", " ", " ", " ", "x"
+   "x", "|g++-mingw-w64-version|_",   "x", "x", "x", "x", "x", "x"
+   " ", "|g++-14-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|g++-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
+
+.. [*] Default version.
+
+.. |gcc-name| replace:: :strong:`GNU C compiler`
+.. _`gcc-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gcc
+
+.. |g++-name| replace:: :strong:`GNU C++ compiler`
+.. _`g++-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=g%2B%2B
+
+.. |gcc-10-version| replace:: :strong:`v10.5`
+.. _`gcc-10-version`: https://packages.ubuntu.com/noble/gcc-10
+
+.. |gcc-10-multilib-version| replace:: |____| → multilib files
+.. _`gcc-10-multilib-version`: https://packages.ubuntu.com/noble/gcc-10-multilib
+
+.. |g++-10-version| replace:: :strong:`v10.5`
+.. _`g++-10-version`: https://packages.ubuntu.com/noble/g++-10
+
+.. |g++-10-multilib-version| replace:: |____| → multilib files
+.. _`g++-10-multilib-version`: https://packages.ubuntu.com/noble/g++-10-multilib
+
+.. |gcc-11-version| replace:: :strong:`v11.4`
+.. _`gcc-11-version`: https://packages.ubuntu.com/noble/gcc-11
+
+.. |gcc-11-multilib-version| replace:: |____| → multilib files
+.. _`gcc-11-multilib-version`: https://packages.ubuntu.com/noble/gcc-11-multilib
+
+.. |g++-11-version| replace:: :strong:`v11.4`
+.. _`g++-11-version`: https://packages.ubuntu.com/noble/g++-11
+
+.. |g++-11-multilib-version| replace:: |____| → multilib files
+.. _`g++-11-multilib-version`: https://packages.ubuntu.com/noble/g++-11-multilib
+
+.. |gcc-12-version| replace:: :strong:`v12.3`
+.. _`gcc-12-version`: https://packages.ubuntu.com/noble/gcc-12
+
+.. |gcc-12-multilib-version| replace:: |____| → multilib files
+.. _`gcc-12-multilib-version`: https://packages.ubuntu.com/noble/gcc-12-multilib
+
+.. |g++-12-version| replace:: :strong:`v12.3`
+.. _`g++-12-version`: https://packages.ubuntu.com/noble/g++-12
+
+.. |g++-12-multilib-version| replace:: |____| → multilib files
+.. _`g++-12-multilib-version`: https://packages.ubuntu.com/noble/g++-12-multilib
+
+.. |gcc-version| replace:: :strong:`v13.2`
+.. _`gcc-version`: https://packages.ubuntu.com/noble/gcc
+
+.. |gcc-multilib-version| replace:: |____| → multilib files
+.. _`gcc-multilib-version`: https://packages.ubuntu.com/noble/gcc-multilib
+
+.. |gcc-mingw-w64-version| replace:: |____| → for MinGW-w64
+.. _`gcc-mingw-w64-version`: https://packages.ubuntu.com/noble/gcc-mingw-w64
+
+.. |g++-version| replace:: :strong:`v13.2`
+.. _`g++-version`: https://packages.ubuntu.com/noble/g++
+
+.. |g++-multilib-version| replace:: |____| → multilib files
+.. _`g++-multilib-version`: https://packages.ubuntu.com/noble/g++-multilib
+
+.. |g++-mingw-w64-version| replace:: |____| → for MinGW-w64
+.. _`g++-mingw-w64-version`: https://packages.ubuntu.com/noble/g++-mingw-w64
+
+.. |gcc-14-version| replace:: :strong:`v14`
+.. _`gcc-14-version`: https://packages.ubuntu.com/noble/gcc-14
+
+.. |gcc-14-multilib-version| replace:: |____| → multilib files
+.. _`gcc-14-multilib-version`: https://packages.ubuntu.com/noble/gcc-14-multilib
+
+.. |g++-14-version| replace:: :strong:`v14`
+.. _`g++-14-version`: https://packages.ubuntu.com/noble/g++-14
+
+.. |g++-14-multilib-version| replace:: |____| → multilib files
+.. _`g++-14-multilib-version`: https://packages.ubuntu.com/noble/g++-14-multilib
+
 .. References
 .. ----------
 
