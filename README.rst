@@ -445,6 +445,43 @@ Ubuntu system packages
 .. |gm2-14-version| replace:: :strong:`v14`
 .. _`gm2-14-version`: https://packages.ubuntu.com/noble/gm2-14
 
+.. csv-table:: Ada programming
+   :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 5 65 5 5 5 5 5 5
+   :stub-columns: 1
+
+   " ", "|gnat-name|_ [*]_",         " ", " ", " ", " ", " ", " "
+   " ", "|gnat-10-version|_",        " ", " ", " ", " ", " ", " "
+   " ", "|gnat-11-version|_",        " ", " ", " ", " ", " ", " "
+   " ", "|gnat-12-version|_",        " ", " ", " ", " ", " ", " "
+   "x", "|gnat-version|_",           "x", "x", "x", "x", "x", "x"
+   "x", "|gnat-mingw-w64-version|_", "x", "x", "x", "x", "x", "x"
+   " ", "|gnat-14-version|_",        " ", " ", " ", " ", " ", " "
+
+.. [*] Default version.
+.. [*] .. note:: multiple version installation not possible
+
+.. |gnat-name| replace:: :strong:`GNU Ada compiler`
+.. _`gnat-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gnat
+
+.. |gnat-10-version| replace:: :strong:`v10.5`
+.. _`gnat-10-version`: https://packages.ubuntu.com/noble/gnat-10
+
+.. |gnat-11-version| replace:: :strong:`v11.4`
+.. _`gnat-11-version`: https://packages.ubuntu.com/noble/gnat-11
+
+.. |gnat-12-version| replace:: :strong:`v12.3`
+.. _`gnat-12-version`: https://packages.ubuntu.com/noble/gnat-12
+
+.. |gnat-version| replace:: :strong:`v13.2`
+.. _`gnat-version`: https://packages.ubuntu.com/noble/gnat
+
+.. |gnat-mingw-w64-version| replace:: |____| → for MinGW-w64
+.. _`gnat-mingw-w64-version`: https://packages.ubuntu.com/noble/gnat-mingw-w64
+
+.. |gnat-14-version| replace:: :strong:`v14`
+.. _`gnat-14-version`: https://packages.ubuntu.com/noble/gnat-14
+
 .. References
 .. ----------
 
