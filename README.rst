@@ -356,6 +356,63 @@ Ubuntu system packages
 .. |gccgo-14-multilib-version| replace:: |____| → multilib files
 .. _`gccgo-14-multilib-version`: https://packages.ubuntu.com/noble/gccgo-14-multilib
 
+.. csv-table:: Fortran 95 / 2018 programming
+   :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 5 65 5 5 5 5 5 5
+   :stub-columns: 1
+
+   " ", "|gfortran-name|_ [*]_",           " ", " ", " ", " ", " ", " "
+   " ", "|gfortran-10-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gfortran-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gfortran-11-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gfortran-11-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   " ", "|gfortran-12-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gfortran-12-multilib-version|_", "x", " ", " ", " ", " ", "x"
+   "x", "|gfortran-version|_",             "x", "x", "x", "x", "x", "x"
+   "x", "|gfortran-multilib-version|_",    "x", " ", " ", " ", " ", "x"
+   "x", "|gfortran-mingw-w64-version|_",   "x", "x", "x", "x", "x", "x"
+   " ", "|gfortran-14-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|gfortran-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
+
+.. [*] Default version.
+.. [*] .. note:: compatible to **GNU Fortran 77** too: ``gfortran -std=legacy``
+
+.. |gfortran-name| replace:: :strong:`GNU Fortran 95 compiler`
+.. _`gfortran-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gfortran
+
+.. |gfortran-10-version| replace:: :strong:`v10.5`
+.. _`gfortran-10-version`: https://packages.ubuntu.com/noble/gfortran-10
+
+.. |gfortran-10-multilib-version| replace:: |____| → multilib files
+.. _`gfortran-10-multilib-version`: https://packages.ubuntu.com/noble/gfortran-10-multilib
+
+.. |gfortran-11-version| replace:: :strong:`v11.4`
+.. _`gfortran-11-version`: https://packages.ubuntu.com/noble/gfortran-11
+
+.. |gfortran-11-multilib-version| replace:: |____| → multilib files
+.. _`gfortran-11-multilib-version`: https://packages.ubuntu.com/noble/gfortran-11-multilib
+
+.. |gfortran-12-version| replace:: :strong:`v12.3`
+.. _`gfortran-12-version`: https://packages.ubuntu.com/noble/gfortran-12
+
+.. |gfortran-12-multilib-version| replace:: |____| → multilib files
+.. _`gfortran-12-multilib-version`: https://packages.ubuntu.com/noble/gfortran-12-multilib
+
+.. |gfortran-version| replace:: :strong:`v13.2`
+.. _`gfortran-version`: https://packages.ubuntu.com/noble/gfortran
+
+.. |gfortran-multilib-version| replace:: |____| → multilib files
+.. _`gfortran-multilib-version`: https://packages.ubuntu.com/noble/gfortran-multilib
+
+.. |gfortran-mingw-w64-version| replace:: |____| → for MinGW-w64
+.. _`gfortran-mingw-w64-version`: https://packages.ubuntu.com/noble/gfortran-mingw-w64
+
+.. |gfortran-14-version| replace:: :strong:`v14`
+.. _`gfortran-14-version`: https://packages.ubuntu.com/noble/gfortran-14
+
+.. |gfortran-14-multilib-version| replace:: |____| → multilib files
+.. _`gfortran-14-multilib-version`: https://packages.ubuntu.com/noble/gfortran-14-multilib
+
 .. References
 .. ----------
 
