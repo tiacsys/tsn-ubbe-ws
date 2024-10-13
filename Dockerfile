@@ -70,6 +70,233 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
+#
+# All architectures maintenance for GNU C/C++ compiler
+#
+# ############################################################################
+
+FROM base AS gcc-all
+
+# ############################################################################
+#
+# AMD/x86 64-bit architecture maintenance for GNU C/C++ compiler (multilib)
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#   - Win64/Win32
+#
+# ############################################################################
+
+FROM gcc-all AS gcc-amd64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gcc-10 \
+    gcc-10-multilib \
+    g++-10 \
+    g++-10-multilib \
+    gcc-11 \
+    gcc-11-multilib \
+    g++-11 \
+    g++-11-multilib \
+    gcc-12 \
+    gcc-12-multilib \
+    g++-12 \
+    g++-12-multilib \
+    gcc \
+    gcc-mingw-w64 \
+    gcc-multilib \
+    g++ \
+    g++-mingw-w64 \
+    g++-multilib \
+    cpp-14 \
+    gcc-14 \
+    gcc-14-multilib \
+    g++-14 \
+    g++-14-multilib \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv7 32-bit architecture maintenance for GNU C/C++ compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gcc-all AS gcc-arm
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gcc-10 \
+    g++-10 \
+    gcc-11 \
+    g++-11 \
+    gcc-12 \
+    g++-12 \
+    gcc \
+    gcc-mingw-w64 \
+    g++ \
+    g++-mingw-w64 \
+    cpp-14 \
+    gcc-14 \
+    g++-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv8 64-bit architecture maintenance for GNU C/C++ compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gcc-all AS gcc-arm64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gcc-10 \
+    g++-10 \
+    gcc-11 \
+    g++-11 \
+    gcc-12 \
+    g++-12 \
+    gcc \
+    gcc-mingw-w64 \
+    g++ \
+    g++-mingw-w64 \
+    cpp-14 \
+    gcc-14 \
+    g++-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# RISC-V 64-bit architecture maintenance for GNU C/C++ compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gcc-all AS gcc-riscv64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gcc-10 \
+    g++-10 \
+    gcc-11 \
+    g++-11 \
+    gcc-12 \
+    g++-12 \
+    gcc \
+    gcc-mingw-w64 \
+    g++ \
+    g++-mingw-w64 \
+    cpp-14 \
+    gcc-14 \
+    g++-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM POWER8 architecture maintenance for GNU C/C++ compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gcc-all AS gcc-ppc64le
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gcc-10 \
+    g++-10 \
+    gcc-11 \
+    g++-11 \
+    gcc-12 \
+    g++-12 \
+    gcc \
+    gcc-mingw-w64 \
+    g++ \
+    g++-mingw-w64 \
+    cpp-14 \
+    gcc-14 \
+    g++-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM z-Systems architecture maintenance for GNU C/C++ compiler (multilib)
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gcc-all AS gcc-s390x
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gcc-10 \
+    gcc-10-multilib \
+    g++-10 \
+    g++-10-multilib \
+    gcc-11 \
+    gcc-11-multilib \
+    g++-11 \
+    g++-11-multilib \
+    gcc-12 \
+    gcc-12-multilib \
+    g++-12 \
+    g++-12-multilib \
+    gcc \
+    gcc-mingw-w64 \
+    gcc-multilib \
+    g++ \
+    g++-mingw-w64 \
+    g++-multilib \
+    cpp-14 \
+    gcc-14 \
+    gcc-14-multilib \
+    g++-14 \
+    g++-14-multilib \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for GNU C/C++ compiler
+#
+# ############################################################################
+
+FROM gcc-${TARGETARCH} AS gcc
 
 # switch to workspace user
 USER $WSUSER_NAME
