@@ -1074,6 +1074,35 @@ RUN apt-get --assume-yes update \
 
 FROM forth-all AS forth
 
+# ############################################################################
+#
+# All architectures maintenance for Scheme/Lisp Programming Tools
+# - Gambit Scheme interpreter and compiler
+# - GNU Guile 2.2 interpreter
+# - GNU Guile 3.0 JIT compiler
+#
+# ############################################################################
+
+FROM forth AS lisp-all
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gambc \
+    guile-2.2 \
+    guile-3.0 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for Scheme/Lisp Programming Tools
+#
+# ############################################################################
+
+FROM lisp-all AS lisp
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME

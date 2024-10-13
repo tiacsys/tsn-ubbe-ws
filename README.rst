@@ -495,6 +495,33 @@ Ubuntu system packages
 .. |gforth-version| replace:: :strong:`v0.7.3`
 .. _`gforth-version`: https://packages.ubuntu.com/noble/gforth
 
+.. csv-table:: Scheme/Lisp programming
+   :header: "Interpreter/Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 70 5 5 5 5 5 5
+
+   "|gambc-name|_",             " ", " ", " ", " ", " ", " "
+   "|gambc-version|_",          "x", "x", "x", "x", "x", "x"
+   "|guile-name|_",             " ", " ", " ", " ", " ", " "
+   "|guile-2.2-version|_",      "x", "x", "x", "x", "x", "x"
+   "|guile-3.0-version|_ [*]_", "x", "x", "x", "x", "x", "x"
+
+.. [*] with `JIT`_ compilation
+
+.. |gambc-name| replace:: :strong:`Gambit interpreter and compiler`
+.. _`gambc-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gambc
+
+.. |gambc-version| replace:: :strong:`v4.9.3`
+.. _`gambc-version`: https://packages.ubuntu.com/noble/gambc
+
+.. |guile-name| replace:: :strong:`GNU Guile interpreter and compiler`
+.. _`guile-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=guile
+
+.. |guile-2.2-version| replace:: :strong:`v2.2`
+.. _`guile-2.2-version`: https://packages.ubuntu.com/noble/guile-2.2
+
+.. |guile-3.0-version| replace:: :strong:`v3.0`
+.. _`guile-3.0-version`: https://packages.ubuntu.com/noble/guile-3.0
+
 .. References
 .. ----------
 
