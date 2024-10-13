@@ -11,6 +11,7 @@
 		{ "stage": "forth", "ghr-free-disk": true },
 		{ "stage": "lisp", "ghr-free-disk": true },
 		{ "stage": "meta", "ghr-free-disk": true },
+		{ "stage": "gnu", "ghr-free-disk": true },
 		{ "stage": "push", "ghr-free-disk": true }
 	]
 }
