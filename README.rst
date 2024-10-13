@@ -522,6 +522,43 @@ Ubuntu system packages
 .. |guile-3.0-version| replace:: :strong:`v3.0`
 .. _`guile-3.0-version`: https://packages.ubuntu.com/noble/guile-3.0
 
+.. csv-table:: Meta programming
+   :header: "Tools", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 70 5 5 5 5 5 5
+
+   "|bison-version|_ [Y]_",        "x", "x", "x", "x", "x", "x"
+   "|byacc-version|_ [L]_/ [Y]_",  "x", "x", "x", "x", "x", "x"
+   "|btyacc-version|_ [L]_/ [Y]_", "x", "x", "x", "x", "x", "x"
+   "|nyacc-version|_ [Y]_",        "x", "x", "x", "x", "x", "x"
+   "|flex-version|_",              "x", "x", "x", "x", "x", "x"
+   "|re2c-version|_ [T]_",         "x", "x", "x", "x", "x", "x"
+   "|m4-version|_",                "x", "x", "x", "x", "x", "x"
+
+.. [L] with `Look-Ahead, Left-to-Right <LALR_>`_ support
+.. [T] with `Look-Ahead, Tagged Deterministic Finite Automaton <TDFA_>`_ support
+.. [Y] with `Yet Another Compiler-Compiler <YACC_>`_ support
+
+.. |bison-version| replace:: GNU Bison YACC parser generator :strong:`v3.8.2`
+.. _`bison-version`: https://packages.ubuntu.com/noble/bison
+
+.. |byacc-version| replace:: Berkeley LALR/YACC parser generator :strong:`v2.0`
+.. _`byacc-version`: https://packages.ubuntu.com/noble/byacc
+
+.. |btyacc-version| replace:: Backtracking Berkeley LALR/YACC parser generator :strong:`v3.0`
+.. _`btyacc-version`: https://packages.ubuntu.com/noble/btyacc
+
+.. |nyacc-version| replace:: Not Yet Another Compiler Compiler (YACC) :strong:`v1.00`
+.. _`nyacc-version`: https://packages.ubuntu.com/noble/nyacc
+
+.. |flex-version| replace:: Fast LEXical analyzer generator :strong:`v2.6.4`
+.. _`flex-version`: https://packages.ubuntu.com/noble/flex
+
+.. |re2c-version| replace:: Lexer generator for C/C++, Go and Rust :strong:`v3.1`
+.. _`re2c-version`: https://packages.ubuntu.com/noble/re2c
+
+.. |m4-version| replace:: M4 macro processing language :strong:`v1.4.19`
+.. _`m4-version`: https://packages.ubuntu.com/noble/m4
+
 .. References
 .. ----------
 
