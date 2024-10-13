@@ -812,6 +812,182 @@ RUN apt-get --assume-yes update \
 
 FROM gccgo-${TARGETARCH} AS gccgo
 
+# ############################################################################
+#
+# All architectures maintenance for GNU Fortran 95 compiler
+#
+# ############################################################################
+
+FROM gccgo AS gfortran-all
+
+# ############################################################################
+#
+# AMD/x86 64-bit architecture maintenance for GNU Fortran 95 compiler (multilib)
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gfortran-all AS gfortran-amd64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gfortran-10 \
+    gfortran-10-multilib \
+    gfortran-11 \
+    gfortran-11-multilib \
+    gfortran-12 \
+    gfortran-12-multilib \
+    gfortran \
+    gfortran-mingw-w64 \
+    gfortran-multilib \
+    gfortran-14 \
+    gfortran-14-multilib \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv7 32-bit architecture maintenance for GNU Fortran 95 compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gfortran-all AS gfortran-arm
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gfortran-10 \
+    gfortran-11 \
+    gfortran-12 \
+    gfortran \
+    gfortran-mingw-w64 \
+    gfortran-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv8 64-bit architecture maintenance for GNU Fortran 95 compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gfortran-all AS gfortran-arm64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gfortran-10 \
+    gfortran-11 \
+    gfortran-12 \
+    gfortran \
+    gfortran-mingw-w64 \
+    gfortran-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# RISC-V 64-bit architecture maintenance for GNU Fortran 95 compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gfortran-all AS gfortran-riscv64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gfortran-10 \
+    gfortran-11 \
+    gfortran-12 \
+    gfortran \
+    gfortran-mingw-w64 \
+    gfortran-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM POWER8 architecture maintenance for GNU Fortran 95 compiler
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gfortran-all AS gfortran-ppc64le
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gfortran-10 \
+    gfortran-11 \
+    gfortran-12 \
+    gfortran \
+    gfortran-mingw-w64 \
+    gfortran-14 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM z-Systems architecture maintenance for GNU Fortran 95 compiler (multilib)
+# - with Win32 and Win64 using MinGW-w64 for
+#   - Win32/POSIX
+#   - Win32/Win32
+#   - Win64/POSIX
+#
+# ############################################################################
+
+FROM gfortran-all AS gfortran-s390x
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gfortran-10 \
+    gfortran-10-multilib \
+    gfortran-11 \
+    gfortran-11-multilib \
+    gfortran-12 \
+    gfortran-12-multilib \
+    gfortran \
+    gfortran-mingw-w64 \
+    gfortran-multilib \
+    gfortran-14 \
+    gfortran-14-multilib \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for GNU Fortran 95 compiler
+#
+# ############################################################################
+
+FROM gfortran-${TARGETARCH} AS gfortran
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME

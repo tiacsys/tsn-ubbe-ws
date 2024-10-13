@@ -5,6 +5,7 @@
 		{ "stage": "gobjc" },
 		{ "stage": "gdc" },
 		{ "stage": "gccgo" },
+		{ "stage": "gfortran" },
 		{ "stage": "push", "ghr-free-disk": true }
 	]
 }
