@@ -1103,6 +1103,41 @@ RUN apt-get --assume-yes update \
 
 FROM lisp-all AS lisp
 
+# ############################################################################
+#
+# All architectures maintenance for Meta Programming Tools
+# - GNU Bison YACC parser generator
+# - Berkeley LALR YACC parser generator
+# - Not Yet Another Compiler Compiler
+# - Look-Ahead TDFA lexer generator
+# - M4 macro processing language
+#
+# ############################################################################
+
+FROM lisp AS meta-all
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    bison \
+    btyacc \
+    byacc \
+    flex \
+    m4 \
+    nyacc \
+    re2c \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for Meta Programming Tools
+#
+# ############################################################################
+
+FROM meta-all AS meta
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME
