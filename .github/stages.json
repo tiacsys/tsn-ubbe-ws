@@ -2,6 +2,7 @@
 	"include": [
 		{ "stage": "base" },
 		{ "stage": "llvm" },
+		{ "stage": "clang" },
 		{ "stage": "gcc" },
 		{ "stage": "gobjc" },
 		{ "stage": "gdc" },

@@ -188,6 +188,27 @@ Ubuntu system packages
    :widths: 5 65 5 5 5 5 5 5
    :stub-columns: 1
 
+   " ", "|clang-name|_",                  " ", " ", " ", " ", " ", " "
+   " ", "|clang-14-version|_",            "x", "x", "x", "x", "x", "x"
+   " ", "|clang-format-14-version|_",     "x", "x", "x", "x", "x", "x"
+   " ", "|clang-tools-14-version|_",      "x", "x", "x", "x", "x", "x"
+   " ", "|clang-tidy-14-version|_",       "x", "x", "x", "x", "x", "x"
+   " ", "|clang-15-version|_",            "x", "x", "x", "x", "x", "x"
+   " ", "|clang-format-15-version|_",     "x", "x", "x", "x", "x", "x"
+   " ", "|clang-tools-15-version|_",      "x", "x", "x", "x", "x", "x"
+   " ", "|clang-tidy-15-version|_",       "x", "x", "x", "x", "x", "x"
+   " ", "|clang-16-version|_",            "x", "x", "x", "x", "x", "x"
+   " ", "|clang-format-16-version|_",     "x", "x", "x", "x", "x", "x"
+   " ", "|clang-tools-16-version|_",      "x", "x", "x", "x", "x", "x"
+   " ", "|clang-tidy-16-version|_",       "x", "x", "x", "x", "x", "x"
+   " ", "|clang-17-version|_",            "x", "x", "x", "x", "x", "x"
+   " ", "|clang-format-17-version|_",     "x", "x", "x", "x", "x", "x"
+   " ", "|clang-tools-17-version|_",      "x", "x", "x", "x", "x", "x"
+   " ", "|clang-tidy-17-version|_",       "x", "x", "x", "x", "x", "x"
+   "x", "|clang-version|_",               "x", "x", "x", "x", "x", "x"
+   "x", "|clang-format-version|_",        "x", "x", "x", "x", "x", "x"
+   "x", "|clang-tools-version|_",         "x", "x", "x", "x", "x", "x"
+   "x", "|clang-tidy-version|_",          "x", "x", "x", "x", "x", "x"
    " ", "|gcc-name|_",                    " ", " ", " ", " ", " ", " "
    " ", "|gcc-10-version|_",              "x", "x", "x", "x", "x", "x"
    " ", "|gcc-10-multilib-version|_",     "x", " ", " ", " ", " ", "x"
@@ -238,6 +259,69 @@ Ubuntu system packages
    " ", "|gobjc++-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
 
 .. [*] Default version.
+
+.. |clang-name| replace:: :strong:`Clang compiler`
+.. _`clang-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=clang
+
+.. |clang-14-version| replace:: :strong:`v14.0.6`
+.. _`clang-14-version`: https://packages.ubuntu.com/noble/clang-14
+
+.. |clang-format-14-version| replace:: |____| → code formatter
+.. _`clang-format-14-version`: https://packages.ubuntu.com/noble/clang-format-14
+
+.. |clang-tools-14-version| replace:: |____| → development tools
+.. _`clang-tools-14-version`: https://packages.ubuntu.com/noble/clang-tools-14
+
+.. |clang-tidy-14-version| replace:: |____| → linter tool
+.. _`clang-tidy-14-version`: https://packages.ubuntu.com/noble/clang-tidy-14
+
+.. |clang-15-version| replace:: :strong:`v15.0.7`
+.. _`clang-15-version`: https://packages.ubuntu.com/noble/clang-15
+
+.. |clang-format-15-version| replace:: |____| → code formatter
+.. _`clang-format-15-version`: https://packages.ubuntu.com/noble/clang-format-15
+
+.. |clang-tools-15-version| replace:: |____| → development tools
+.. _`clang-tools-15-version`: https://packages.ubuntu.com/noble/clang-tools-15
+
+.. |clang-tidy-15-version| replace:: |____| → linter tool
+.. _`clang-tidy-15-version`: https://packages.ubuntu.com/noble/clang-tidy-15
+
+.. |clang-16-version| replace:: :strong:`v16.0.6`
+.. _`clang-16-version`: https://packages.ubuntu.com/noble/clang-16
+
+.. |clang-format-16-version| replace:: |____| → code formatter
+.. _`clang-format-16-version`: https://packages.ubuntu.com/noble/clang-format-16
+
+.. |clang-tools-16-version| replace:: |____| → development tools
+.. _`clang-tools-16-version`: https://packages.ubuntu.com/noble/clang-tools-16
+
+.. |clang-tidy-16-version| replace:: |____| → linter tool
+.. _`clang-tidy-16-version`: https://packages.ubuntu.com/noble/clang-tidy-16
+
+.. |clang-17-version| replace:: :strong:`v17.0.6`
+.. _`clang-17-version`: https://packages.ubuntu.com/noble/clang-17
+
+.. |clang-format-17-version| replace:: |____| → code formatter
+.. _`clang-format-17-version`: https://packages.ubuntu.com/noble/clang-format-17
+
+.. |clang-tools-17-version| replace:: |____| → development tools
+.. _`clang-tools-17-version`: https://packages.ubuntu.com/noble/clang-tools-17
+
+.. |clang-tidy-17-version| replace:: |____| → linter tool
+.. _`clang-tidy-17-version`: https://packages.ubuntu.com/noble/clang-tidy-17
+
+.. |clang-version| replace:: :strong:`v18.1.3`
+.. _`clang-version`: https://packages.ubuntu.com/noble/clang
+
+.. |clang-format-version| replace:: |____| → code formatter
+.. _`clang-format-version`: https://packages.ubuntu.com/noble/clang-format
+
+.. |clang-tools-version| replace:: |____| → development tools
+.. _`clang-tools-version`: https://packages.ubuntu.com/noble/clang-tools
+
+.. |clang-tidy-version| replace:: |____| → linter tool
+.. _`clang-tidy-version`: https://packages.ubuntu.com/noble/clang-tidy
 
 .. |gcc-name| replace:: :strong:`GNU C compiler`
 .. _`gcc-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gcc
