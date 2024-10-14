@@ -144,11 +144,131 @@ FROM clang-all AS clang
 
 # ############################################################################
 #
+# All architectures maintenance for LLVM Fortran 95 / 2018 compiler
+#
+# ############################################################################
+
+FROM clang AS flang-all
+
+# ############################################################################
+#
+# AMD/x86 64-bit architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#
+# ############################################################################
+
+FROM flang-all AS flang-amd64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    flang-15 \
+    flang-16 \
+    flang-17 \
+    flang \
+    lfortran \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv7 32-bit architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#
+# ############################################################################
+
+FROM flang-all AS flang-arm
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    lfortran \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv8 64-bit architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#
+# ############################################################################
+
+FROM flang-all AS flang-arm64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    flang-15 \
+    flang-16 \
+    flang-17 \
+    flang \
+    lfortran \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# RISC-V 64-bit architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#
+# ############################################################################
+
+FROM flang-all AS flang-riscv64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    flang-15 \
+    flang-16 \
+    flang-17 \
+    flang \
+    lfortran \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM POWER8 architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#
+# ############################################################################
+
+FROM flang-all AS flang-ppc64le
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    flang-15 \
+    flang-16 \
+    flang-17 \
+    flang \
+    lfortran \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM z-Systems architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#
+# ############################################################################
+
+FROM flang-all AS flang-s390x
+
+# ############################################################################
+#
+# Final maintenance for LLVM Fortran 95 / 2018 compiler
+#
+# ############################################################################
+
+FROM flang-${TARGETARCH} AS flang
+
+# ############################################################################
+#
 # All architectures maintenance for GNU C/C++ compiler
 #
 # ############################################################################
 
-FROM clang AS gcc-all
+FROM flang AS gcc-all
 
 # ############################################################################
 #

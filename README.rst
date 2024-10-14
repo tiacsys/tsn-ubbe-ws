@@ -576,6 +576,13 @@ Ubuntu system packages
    :widths: 5 65 5 5 5 5 5 5
    :stub-columns: 1
 
+   " ", "|flang-name|_",                   " ", " ", " ", " ", " ", " "
+   " ", "|flang-15-version|_",             "x", " ", "x", "x", "x", " "
+   " ", "|flang-16-version|_",             "x", " ", "x", "x", "x", " "
+   " ", "|flang-17-version|_",             "x", " ", "x", "x", "x", " "
+   "x", "|flang-version|_",                "x", " ", "x", "x", "x", " "
+   " ", "|lfortran-name|_",                " ", " ", " ", " ", " ", " "
+   "x", "|lfortran-version|_",             "x", "x", "x", "x", "x", " "
    " ", "|gfortran-name|_ [*]_",           " ", " ", " ", " ", " ", " "
    " ", "|gfortran-10-version|_",          "x", "x", "x", "x", "x", "x"
    " ", "|gfortran-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
@@ -591,6 +598,27 @@ Ubuntu system packages
 
 .. [*] Default version.
 .. [*] .. note:: compatible to **GNU Fortran 77** too: ``gfortran -std=legacy``
+
+.. |flang-name| replace:: :strong:`Flang compiler`
+.. _`flang-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=flang
+
+.. |flang-15-version| replace:: :strong:`v15.0.7`
+.. _`flang-15-version`: https://packages.ubuntu.com/noble/flang-15
+
+.. |flang-16-version| replace:: :strong:`v16.0.6`
+.. _`flang-16-version`: https://packages.ubuntu.com/noble/flang-16
+
+.. |flang-17-version| replace:: :strong:`v17.0.6`
+.. _`flang-17-version`: https://packages.ubuntu.com/noble/flang-17
+
+.. |flang-version| replace:: :strong:`v18.1.3`
+.. _`flang-version`: https://packages.ubuntu.com/noble/flang
+
+.. |lfortran-name| replace:: :strong:`LFortran compiler`
+.. _`lfortran-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=lfortran
+
+.. |lfortran-version| replace:: :strong:`v0.30` (ALPHA)
+.. _`lfortran-version`: https://packages.ubuntu.com/noble/lfortran
 
 .. |gfortran-name| replace:: :strong:`GNU Fortran 95 compiler`
 .. _`gfortran-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gfortran

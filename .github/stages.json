@@ -3,6 +3,7 @@
 		{ "stage": "base" },
 		{ "stage": "llvm" },
 		{ "stage": "clang" },
+		{ "stage": "flang" },
 		{ "stage": "gcc" },
 		{ "stage": "gobjc" },
 		{ "stage": "gdc" },
