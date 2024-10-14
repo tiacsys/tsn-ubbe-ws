@@ -101,11 +101,54 @@ FROM llvm-all AS llvm
 
 # ############################################################################
 #
+# All architectures maintenance for LLVM C/C++ and Objective-C compiler
+#
+# ############################################################################
+
+FROM llvm AS clang-all
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    clang-14 \
+    clang-format-14 \
+    clang-tools-14 \
+    clang-tidy-14 \
+    clang-15 \
+    clang-format-15 \
+    clang-tools-15 \
+    clang-tidy-15 \
+    clang-16 \
+    clang-format-16 \
+    clang-tools-16 \
+    clang-tidy-16 \
+    clang-17 \
+    clang-format-17 \
+    clang-tools-17 \
+    clang-tidy-17 \
+    clang \
+    clang-format \
+    clang-tools \
+    clang-tidy \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for LLVM C/C++ and Objective-C compiler
+#
+# ############################################################################
+
+FROM clang-all AS clang
+
+# ############################################################################
+#
 # All architectures maintenance for GNU C/C++ compiler
 #
 # ############################################################################
 
-FROM llvm AS gcc-all
+FROM clang AS gcc-all
 
 # ############################################################################
 #
