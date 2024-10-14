@@ -127,6 +127,62 @@ Ubuntu system packages
 .. |libltdl-dev-version| replace:: GNU libtool (headers) :strong:`v2.4.7`
 .. _`libltdl-dev-version`: https://packages.ubuntu.com/noble/libltdl-dev
 
+.. csv-table:: Low-Level Virtual Machine (LLVM)
+   :header: "[*]_", "LLVM", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 5 65 5 5 5 5 5 5
+   :stub-columns: 1
+
+   " ", "|llvm-name|_",           " ", " ", " ", " ", " ", " "
+   " ", "|llvm-14-dev-version|_", "x", "x", "x", "x", "x", "x"
+   " ", "|llvm-15-dev-version|_", "x", "x", "x", "x", "x", "x"
+   " ", "|llvm-16-dev-version|_", "x", "x", "x", "x", "x", "x"
+   " ", "|llvm-17-dev-version|_", "x", "x", "x", "x", "x", "x"
+   "x", "|llvm-dev-version|_",    "x", "x", "x", "x", "x", "x"
+   " ", "|lld-name|_",            " ", " ", " ", " ", " ", " "
+   " ", "|lld-14-version|_",      "x", "x", "x", "x", "x", "x"
+   " ", "|lld-15-version|_",      "x", "x", "x", "x", "x", "x"
+   " ", "|lld-16-version|_",      "x", "x", "x", "x", "x", "x"
+   " ", "|lld-17-version|_",      "x", "x", "x", "x", "x", "x"
+   "x", "|lld-version|_",         "x", "x", "x", "x", "x", "x"
+
+.. [*] Default version.
+
+.. |llvm-name| replace:: :strong:`LLVM Modular compiler`
+.. _`llvm-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=llvm
+
+.. |llvm-14-dev-version| replace:: :strong:`v14.0.6`
+.. _`llvm-14-dev-version`: https://packages.ubuntu.com/noble/llvm-14-dev
+
+.. |llvm-15-dev-version| replace:: :strong:`v15.0.7`
+.. _`llvm-15-dev-version`: https://packages.ubuntu.com/noble/llvm-15-dev
+
+.. |llvm-16-dev-version| replace:: :strong:`v16.0.6`
+.. _`llvm-16-dev-version`: https://packages.ubuntu.com/noble/llvm-16-dev
+
+.. |llvm-17-dev-version| replace:: :strong:`v17.0.6`
+.. _`llvm-17-dev-version`: https://packages.ubuntu.com/noble/llvm-17-dev
+
+.. |llvm-dev-version| replace:: :strong:`v18.1.3`
+.. _`llvm-dev-version`: https://packages.ubuntu.com/noble/llvm-dev
+
+.. |lld-name| replace:: :strong:`LLVM-based linker`
+.. _`lld-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=lld
+
+.. |lld-14-version| replace:: :strong:`v14.0.6`
+.. _`lld-14-version`: https://packages.ubuntu.com/noble/lld-14
+
+.. |lld-15-version| replace:: :strong:`v15.0.7`
+.. _`lld-15-version`: https://packages.ubuntu.com/noble/lld-15
+
+.. |lld-16-version| replace:: :strong:`v16.0.6`
+.. _`lld-16-version`: https://packages.ubuntu.com/noble/lld-16
+
+.. |lld-17-version| replace:: :strong:`v17.0.6`
+.. _`lld-17-version`: https://packages.ubuntu.com/noble/lld-17
+
+.. |lld-version| replace:: :strong:`v18.1.3`
+.. _`lld-version`: https://packages.ubuntu.com/noble/lld
+
 .. csv-table:: C/C++ and Objective-C/C++ programming
    :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
    :widths: 5 65 5 5 5 5 5 5

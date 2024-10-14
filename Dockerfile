@@ -71,11 +71,41 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
+# All architectures maintenance for Low-Level Virtual Machine (LLVM)
+#
+# ############################################################################
+
+FROM base AS llvm-all
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    llvm-14-dev \
+    llvm-15-dev \
+    llvm-16-dev \
+    llvm-17-dev \
+    lld-17 \
+    llvm-dev \
+    lld \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for Low-Level Virtual Machine (LLVM)
+#
+# ############################################################################
+
+FROM llvm-all AS llvm
+
+# ############################################################################
+#
 # All architectures maintenance for GNU C/C++ compiler
 #
 # ############################################################################
 
-FROM base AS gcc-all
+FROM llvm AS gcc-all
 
 # ############################################################################
 #

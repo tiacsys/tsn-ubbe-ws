@@ -1,6 +1,7 @@
 {
 	"include": [
 		{ "stage": "base" },
+		{ "stage": "llvm" },
 		{ "stage": "gcc" },
 		{ "stage": "gobjc" },
 		{ "stage": "gdc" },
