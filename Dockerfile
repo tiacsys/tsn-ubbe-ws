@@ -1340,12 +1340,37 @@ FROM gnat-all AS gnat
 
 # ############################################################################
 #
+# All architectures maintenance for COBOL Programming Tools
+# - GNU COBOL compiler
+#
+# ############################################################################
+
+FROM gnat AS cobol-all
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    gnucobol \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for COBOL Programming Tools
+#
+# ############################################################################
+
+FROM cobol-all AS cobol
+
+# ############################################################################
+#
 # All architectures maintenance for Forth Programming Tools
 # - GNU Forth Language Environment
 #
 # ############################################################################
 
-FROM gnat AS forth-all
+FROM cobol AS forth-all
 
 # Install requirements
 RUN apt-get --assume-yes update \
