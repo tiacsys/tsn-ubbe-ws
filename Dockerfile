@@ -264,11 +264,107 @@ FROM flang-${TARGETARCH} AS flang
 
 # ############################################################################
 #
+# All architectures maintenance for LLVM D compiler
+#
+# ############################################################################
+
+FROM flang AS ldc-all
+
+# ############################################################################
+#
+# AMD/x86 64-bit architecture maintenance for LLVM D compiler
+#
+# ############################################################################
+
+FROM ldc-all AS ldc-amd64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    ldc \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv7 32-bit architecture maintenance for LLVM D compiler
+#
+# ############################################################################
+
+FROM ldc-all AS ldc-arm
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    ldc \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv8 64-bit architecture maintenance for LLVM D compiler
+#
+# ############################################################################
+
+FROM ldc-all AS ldc-arm64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    ldc \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# RISC-V 64-bit architecture maintenance for LLVM D compiler
+#
+# ############################################################################
+
+FROM ldc-all AS ldc-riscv64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    ldc \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM POWER8 architecture maintenance for LLVM D compiler
+#
+# ############################################################################
+
+FROM ldc-all AS ldc-ppc64le
+
+# ############################################################################
+#
+# IBM z-Systems architecture maintenance for LLVM D compiler
+#
+# ############################################################################
+
+FROM ldc-all AS ldc-s390x
+
+# ############################################################################
+#
+# Final maintenance for LLVM D compiler
+#
+# ############################################################################
+
+FROM ldc-${TARGETARCH} AS ldc
+
+# ############################################################################
+#
 # All architectures maintenance for GNU C/C++ compiler
 #
 # ############################################################################
 
-FROM flang AS gcc-all
+FROM ldc AS gcc-all
 
 # ############################################################################
 #

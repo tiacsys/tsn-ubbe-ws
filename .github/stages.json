@@ -4,6 +4,7 @@
 		{ "stage": "llvm" },
 		{ "stage": "clang" },
 		{ "stage": "flang" },
+		{ "stage": "ldc" },
 		{ "stage": "gcc" },
 		{ "stage": "gobjc" },
 		{ "stage": "gdc" },
