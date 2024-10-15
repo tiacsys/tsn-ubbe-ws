@@ -1651,6 +1651,225 @@ RUN apt-get --assume-yes update \
 
 FROM gnu-all AS gnu
 
+# ############################################################################
+#
+# All architectures maintenance for additional development tools
+#
+# ############################################################################
+
+FROM gnu AS addons-all
+
+# ############################################################################
+#
+# AMD/x86 64-bit architecture maintenance for additional development tools
+#
+# ############################################################################
+
+FROM addons-all AS addons-amd64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    cmake \
+    cmake-format \
+    ninja-build \
+    \
+    libnanopb-dev \
+    libprotobuf-dev \
+    nanopb \
+    protobuf-compiler \
+    \
+    musl-tools \
+    dietlibc-dev \
+    libboost-all-dev \
+    \
+    bcc \
+    bin86 \
+    elks-libc \
+    \
+    nasm \
+    x86dis \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv7 32-bit architecture maintenance for additional development tools
+#
+# ############################################################################
+
+FROM addons-all AS addons-arm
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    cmake \
+    cmake-format \
+    ninja-build \
+    \
+    libnanopb-dev \
+    libprotobuf-dev \
+    nanopb \
+    protobuf-compiler \
+    \
+    musl-tools \
+    dietlibc-dev \
+    libboost-all-dev \
+    \
+    bcc \
+    bin86 \
+    elks-libc \
+    \
+    nasm \
+    x86dis \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv8 64-bit architecture maintenance for additional development tools
+#
+# ############################################################################
+
+FROM addons-all AS addons-arm64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    cmake \
+    cmake-format \
+    ninja-build \
+    \
+    libnanopb-dev \
+    libprotobuf-dev \
+    nanopb \
+    protobuf-compiler \
+    \
+    musl-tools \
+    dietlibc-dev \
+    libboost-all-dev \
+    \
+    bcc \
+    bin86 \
+    elks-libc \
+    \
+    nasm \
+    x86dis \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# RISC-V 64-bit architecture maintenance for additional development tools
+#
+# ############################################################################
+
+FROM addons-all AS addons-riscv64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    cmake \
+    cmake-format \
+    ninja-build \
+    \
+    libnanopb-dev \
+    libprotobuf-dev \
+    nanopb \
+    protobuf-compiler \
+    \
+    musl-tools \
+    libboost-all-dev \
+    \
+    bcc \
+    bin86 \
+    elks-libc \
+    \
+    nasm \
+    x86dis \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM POWER8 architecture maintenance for additional development tools
+#
+# ############################################################################
+
+FROM addons-all AS addons-ppc64le
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    cmake \
+    cmake-format \
+    ninja-build \
+    \
+    libnanopb-dev \
+    libprotobuf-dev \
+    nanopb \
+    protobuf-compiler \
+    \
+    musl-tools \
+    dietlibc-dev \
+    libboost-all-dev \
+    \
+    bcc \
+    bin86 \
+    elks-libc \
+    \
+    nasm \
+    x86dis \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM z-Systems architecture maintenance for additional development tools
+#
+# ############################################################################
+
+FROM addons-all AS addons-s390x
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    cmake \
+    cmake-format \
+    ninja-build \
+    \
+    libnanopb-dev \
+    libprotobuf-dev \
+    nanopb \
+    protobuf-compiler \
+    \
+    musl-tools \
+    dietlibc-dev \
+    libboost-all-dev \
+    \
+    bcc \
+    bin86 \
+    elks-libc \
+    \
+    nasm \
+    x86dis \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for additional development tools
+#
+# ############################################################################
+
+FROM addons-${TARGETARCH} AS addons
+
 # switch to workspace user
 USER $WSUSER_NAME
 WORKDIR $WSUSER_HOME
