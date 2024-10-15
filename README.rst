@@ -127,6 +127,65 @@ Ubuntu system packages
 .. |libltdl-dev-version| replace:: GNU libtool (headers) :strong:`v2.4.7`
 .. _`libltdl-dev-version`: https://packages.ubuntu.com/noble/libltdl-dev
 
+.. rubric:: Additional development tools
+
+- |cmake-version|_
+- |cmake-format-version|_
+- |ninja-build-version|_
+
+.. |cmake-version| replace:: CMake cross-platform make system :strong:`v3.28.3`
+.. _`cmake-version`: https://packages.ubuntu.com/noble/cmake
+
+.. |cmake-format-version| replace:: CMake listfiles code formatter :strong:`v0.6.13`
+.. _`cmake-format-version`: https://packages.ubuntu.com/noble/cmake-format
+
+.. |ninja-build-version| replace:: Ninja small build system :strong:`v1.11.1`
+.. _`ninja-build-version`: https://packages.ubuntu.com/noble/ninja-build
+
+- |nanopb-version|_
+- |protobuf-compiler-version|_
+
+.. |nanopb-version| replace:: Protocol Buffers with small code size :strong:`v0.4.8`
+.. _`nanopb-version`: https://packages.ubuntu.com/noble/nanopb
+
+.. |protobuf-compiler-version| replace:: Protocol Buffers compiler :strong:`v3.21.12`
+.. _`protobuf-compiler-version`: https://packages.ubuntu.com/noble/protobuf-compiler
+
+- |musl-tools-version|_
+- |dietlibc-dev-version|_ (not on ``linux/riscv64``)
+- |libboost-all-dev-version|_
+
+.. |musl-tools-version| replace:: Static Lib-C for embedded Linux :strong:`v1.2.4`
+.. _`musl-tools-version`: https://packages.ubuntu.com/noble/musl-tools
+
+.. |dietlibc-dev-version| replace:: Small size optimized Lib-C :strong:`v0.34`
+.. _`dietlibc-dev-version`: https://packages.ubuntu.com/noble/dietlibc-dev
+
+.. |libboost-all-dev-version| replace:: Boost C++ Libraries :strong:`v1.38.0`
+.. _`libboost-all-dev-version`: https://packages.ubuntu.com/noble/libboost-all-dev
+
+- |bcc-version|_
+- |bin86-version|_
+- |elks-libc-version|_
+
+.. |bcc-version| replace:: 16-bit x86 C compiler :strong:`v0.16.17`
+.. _`bcc-version`: https://packages.ubuntu.com/noble/bcc
+
+.. |bin86-version| replace:: 16-bit x86 assembler and loader :strong:`v0.16.17`
+.. _`bin86-version`: https://packages.ubuntu.com/noble/bin86
+
+.. |elks-libc-version| replace:: 16-bit x86 C library and include files :strong:`v0.16.17`
+.. _`elks-libc-version`: https://packages.ubuntu.com/noble/elks-libc
+
+- |nasm-version|_
+- |x86dis-version|_
+
+.. |nasm-version| replace:: General-purpose x86 assembler :strong:`v2.16.01`
+.. _`nasm-version`: https://packages.ubuntu.com/noble/nasm
+
+.. |x86dis-version| replace:: Lib-based x86 disassembler :strong:`v0.23`
+.. _`x86dis-version`: https://packages.ubuntu.com/noble/x86dis
+
 .. csv-table:: Low-Level Virtual Machine (LLVM)
    :header: "[*]_", "LLVM", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
    :widths: 5 65 5 5 5 5 5 5
