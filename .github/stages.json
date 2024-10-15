@@ -18,6 +18,7 @@
 		{ "stage": "lisp", "ghr-free-disk": true },
 		{ "stage": "meta", "ghr-free-disk": true },
 		{ "stage": "gnu", "ghr-free-disk": true },
+		{ "stage": "addons", "ghr-free-disk": true },
 		{ "stage": "push", "ghr-free-disk": true }
 	]
 }
