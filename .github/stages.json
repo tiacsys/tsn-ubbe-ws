@@ -14,6 +14,7 @@
 		{ "stage": "gnat" },
 		{ "stage": "cobol", "ghr-free-disk": true },
 		{ "stage": "forth", "ghr-free-disk": true },
+		{ "stage": "pascal", "ghr-free-disk": true },
 		{ "stage": "lisp", "ghr-free-disk": true },
 		{ "stage": "meta", "ghr-free-disk": true },
 		{ "stage": "gnu", "ghr-free-disk": true },
