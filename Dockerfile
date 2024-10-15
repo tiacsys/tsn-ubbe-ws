@@ -1390,6 +1390,166 @@ FROM forth-all AS forth
 
 # ############################################################################
 #
+# All architectures maintenance for Pascal Programming Tools
+# - Free Pascal compiler
+#
+# ############################################################################
+
+FROM forth AS pascal-all
+
+# ############################################################################
+#
+# AMD/x86 64-bit architecture maintenance for Pascal Programming Tools
+#
+# ############################################################################
+
+FROM pascal-all AS pascal-amd64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    fp-compiler \
+    fp-units-base \
+    fp-units-db \
+    fp-units-fcl \
+    fp-units-fv \
+    fp-units-gfx \
+    fp-units-gtk2 \
+    fp-units-math \
+    fp-units-misc \
+    fp-units-multimedia \
+    fp-units-net \
+    fp-units-wasm \
+    fp-units-win-base \
+    fp-units-win-db \
+    fp-units-win-fcl \
+    fp-units-win-fv \
+    fp-units-win-gfx \
+    fp-units-win-gtk2 \
+    fp-units-win-math \
+    fp-units-win-misc \
+    fp-units-win-multimedia \
+    fp-units-win-net \
+    fp-units-win-wasm \
+    fp-utils \
+    pasdoc \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv7 32-bit architecture maintenance for Pascal Programming Tools
+#
+# ############################################################################
+
+FROM pascal-all AS pascal-arm
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    fp-compiler \
+    fp-units-base \
+    fp-units-db \
+    fp-units-fcl \
+    fp-units-fv \
+    fp-units-gfx \
+    fp-units-gtk2 \
+    fp-units-math \
+    fp-units-misc \
+    fp-units-multimedia \
+    fp-units-net \
+    fp-units-wasm \
+    fp-utils \
+    pasdoc \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv8 64-bit architecture maintenance for Pascal Programming Tools
+#
+# ############################################################################
+
+FROM pascal-all AS pascal-arm64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    fp-compiler \
+    fp-units-base \
+    fp-units-db \
+    fp-units-fcl \
+    fp-units-fv \
+    fp-units-gfx \
+    fp-units-gtk2 \
+    fp-units-math \
+    fp-units-misc \
+    fp-units-multimedia \
+    fp-units-net \
+    fp-units-wasm \
+    fp-utils \
+    pasdoc \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# RISC-V 64-bit architecture maintenance for Pascal Programming Tools
+#
+# ############################################################################
+
+FROM pascal-all AS pascal-riscv64
+
+# ############################################################################
+#
+# IBM POWER8 architecture maintenance for Pascal Programming Tools
+#
+# ############################################################################
+
+FROM pascal-all AS pascal-ppc64le
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    fp-compiler \
+    fp-units-base \
+    fp-units-db \
+    fp-units-fcl \
+    fp-units-fv \
+    fp-units-gfx \
+    fp-units-gtk2 \
+    fp-units-math \
+    fp-units-misc \
+    fp-units-multimedia \
+    fp-units-net \
+    fp-units-wasm \
+    fp-utils \
+    pasdoc \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM z-Systems architecture maintenance for Pascal Programming Tools
+#
+# ############################################################################
+
+FROM pascal-all AS pascal-s390x
+
+# ############################################################################
+#
+# Final maintenance for Forth Programming Tools
+#
+# ############################################################################
+
+FROM pascal-${TARGETARCH} AS pascal
+
+# ############################################################################
+#
 # All architectures maintenance for Scheme/Lisp Programming Tools
 # - Gambit Scheme interpreter and compiler
 # - GNU Guile 2.2 interpreter
@@ -1397,7 +1557,7 @@ FROM forth-all AS forth
 #
 # ############################################################################
 
-FROM forth AS lisp-all
+FROM pascal AS lisp-all
 
 # Install requirements
 RUN apt-get --assume-yes update \
