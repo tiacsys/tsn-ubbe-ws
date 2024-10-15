@@ -733,6 +733,26 @@ Ubuntu system packages
 .. |gnat-14-version| replace:: :strong:`v14`
 .. _`gnat-14-version`: https://packages.ubuntu.com/noble/gnat-14
 
+.. csv-table:: COBOL programming
+   :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 5 65 5 5 5 5 5 5
+
+   " ", "|gnucobol-name|_ [*]_", " ", " ", " ", " ", " ", " "
+   "x", "|gnucobol-version|_",   "x", "x", "x", "x", "x", "x"
+   " ", "|gnucobol4-version|_",  " ", " ", " ", " ", " ", " "
+
+.. [*] Default version.
+.. [*] .. note:: multiple version installation not possible
+
+.. |gnucobol-name| replace:: :strong:`GNU COBOL (OpenCOBOL) compiler`
+.. _`gnucobol-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gnucobol
+
+.. |gnucobol-version| replace:: :strong:`v3.1.2`
+.. _`gnucobol-version`: https://packages.ubuntu.com/noble/gnucobol
+
+.. |gnucobol4-version| replace:: :strong:`v4.0` (TESTING)
+.. _`gnucobol4-version`: https://packages.ubuntu.com/noble/gnucobol4
+
 .. csv-table:: Forth programming
    :header: "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
    :widths: 70 5 5 5 5 5 5
