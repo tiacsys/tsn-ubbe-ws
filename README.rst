@@ -766,6 +766,119 @@ Ubuntu system packages
 .. |gforth-version| replace:: :strong:`v0.7.3`
 .. _`gforth-version`: https://packages.ubuntu.com/noble/gforth
 
+.. csv-table:: Pascal programming
+   :header: "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 70 5 5 5 5 5 5
+
+   "|fp-name|_",                         " ", " ", " ", " ", " ", " "
+   "|fp-compiler-version|_",             "x", "x", "x", " ", "x", " "
+   "|fp-utils-version|_",                "x", "x", "x", " ", "x", " "
+   "|fp-units-base-version|_",           "x", "x", "x", " ", "x", " "
+   "|fp-units-db-version|_",             "x", "x", "x", " ", "x", " "
+   "|fp-units-fcl-version|_",            "x", "x", "x", " ", "x", " "
+   "|fp-units-fv-version|_",             "x", "x", "x", " ", "x", " "
+   "|fp-units-gfx-version|_",            "x", "x", "x", " ", "x", " "
+   "|fp-units-gtk2-version|_",           "x", "x", "x", " ", "x", " "
+   "|fp-units-math-version|_",           "x", "x", "x", " ", "x", " "
+   "|fp-units-misc-version|_",           "x", "x", "x", " ", "x", " "
+   "|fp-units-multimedia-version|_",     "x", "x", "x", " ", "x", " "
+   "|fp-units-net-version|_",            "x", "x", "x", " ", "x", " "
+   "|fp-units-wasm-version|_",           "x", "x", "x", " ", "x", " "
+   "|fp-units-win-base-version|_",       "x", " ", " ", " ", " ", " "
+   "|fp-units-win-db-version|_",         "x", " ", " ", " ", " ", " "
+   "|fp-units-win-fcl-version|_",        "x", " ", " ", " ", " ", " "
+   "|fp-units-win-fv-version|_",         "x", " ", " ", " ", " ", " "
+   "|fp-units-win-gfx-version|_",        "x", " ", " ", " ", " ", " "
+   "|fp-units-win-gtk2-version|_",       "x", " ", " ", " ", " ", " "
+   "|fp-units-win-math-version|_",       "x", " ", " ", " ", " ", " "
+   "|fp-units-win-misc-version|_",       "x", " ", " ", " ", " ", " "
+   "|fp-units-win-multimedia-version|_", "x", " ", " ", " ", " ", " "
+   "|fp-units-win-net-version|_",        "x", " ", " ", " ", " ", " "
+   "|fp-units-win-wasm-version|_",       "x", " ", " ", " ", " ", " "
+   "|pasdoc-name|_",                     " ", " ", " ", " ", " ", " "
+   "|pasdoc-version|_",                  "x", "x", "x", " ", "x", " "
+
+.. |fp-name| replace:: :strong:`Free Pascal compiler`
+.. _`fp-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=fp
+
+.. |fp-compiler-version| replace:: :strong:`v3.2.2`
+.. _`fp-compiler-version`: https://packages.ubuntu.com/noble/fp-compiler
+
+.. |fp-utils-version| replace:: |____| → utilities
+.. _`fp-utils-version`: https://packages.ubuntu.com/noble/fp-utils
+
+.. |fp-units-base-version| replace:: |____| → Base units
+.. _`fp-units-base-version`: https://packages.ubuntu.com/noble/fp-units-base
+
+.. |fp-units-db-version| replace:: |____| → Database units
+.. _`fp-units-db-version`: https://packages.ubuntu.com/noble/fp-units-db
+
+.. |fp-units-fcl-version| replace:: |____| → Free Component units
+.. _`fp-units-fcl-version`: https://packages.ubuntu.com/noble/fp-units-fcl
+
+.. |fp-units-fv-version| replace:: |____| → Free Vision units
+.. _`fp-units-fv-version`: https://packages.ubuntu.com/noble/fp-units-fv
+
+.. |fp-units-gfx-version| replace:: |____| → Graphics units
+.. _`fp-units-gfx-version`: https://packages.ubuntu.com/noble/fp-units-gfx
+
+.. |fp-units-gtk2-version| replace:: |____| → GTK+ 2.x units
+.. _`fp-units-gtk2-version`: https://packages.ubuntu.com/noble/fp-units-gtk2
+
+.. |fp-units-math-version| replace:: |____| → Mathematics units
+.. _`fp-units-math-version`: https://packages.ubuntu.com/noble/fp-units-math
+
+.. |fp-units-misc-version| replace:: |____| → Miscellaneous units
+.. _`fp-units-misc-version`: https://packages.ubuntu.com/noble/fp-units-misc
+
+.. |fp-units-multimedia-version| replace:: |____| → Multimedia units
+.. _`fp-units-multimedia-version`: https://packages.ubuntu.com/noble/fp-units-multimedia
+
+.. |fp-units-net-version| replace:: |____| → Networking units
+.. _`fp-units-net-version`: https://packages.ubuntu.com/noble/fp-units-net
+
+.. |fp-units-wasm-version| replace:: |____| → WebAssembly support units
+.. _`fp-units-wasm-version`: https://packages.ubuntu.com/noble/fp-units-wasm
+
+.. |fp-units-win-base-version| replace:: |____| → ``x86_64-win64``: Base units
+.. _`fp-units-win-base-version`: https://packages.ubuntu.com/noble/fp-units-win-base
+
+.. |fp-units-win-db-version| replace:: |____| → ``x86_64-win64``: Database units
+.. _`fp-units-win-db-version`: https://packages.ubuntu.com/noble/fp-units-win-db
+
+.. |fp-units-win-fcl-version| replace:: |____| → ``x86_64-win64``: Free Component units
+.. _`fp-units-win-fcl-version`: https://packages.ubuntu.com/noble/fp-units-win-fcl
+
+.. |fp-units-win-fv-version| replace:: |____| → ``x86_64-win64``: Free Vision units
+.. _`fp-units-win-fv-version`: https://packages.ubuntu.com/noble/fp-units-win-fv
+
+.. |fp-units-win-gfx-version| replace:: |____| → ``x86_64-win64``: Graphics units
+.. _`fp-units-win-gfx-version`: https://packages.ubuntu.com/noble/fp-units-win-gfx
+
+.. |fp-units-win-gtk2-version| replace:: |____| → ``x86_64-win64``: GTK+ 2.x units
+.. _`fp-units-win-gtk2-version`: https://packages.ubuntu.com/noble/fp-units-win-gtk2
+
+.. |fp-units-win-math-version| replace:: |____| → ``x86_64-win64``: Mathematics units
+.. _`fp-units-win-math-version`: https://packages.ubuntu.com/noble/fp-units-win-math
+
+.. |fp-units-win-misc-version| replace:: |____| → ``x86_64-win64``: Miscellaneous units
+.. _`fp-units-win-misc-version`: https://packages.ubuntu.com/noble/fp-units-win-misc
+
+.. |fp-units-win-multimedia-version| replace:: |____| → ``x86_64-win64``: Multimedia units
+.. _`fp-units-win-multimedia-version`: https://packages.ubuntu.com/noble/fp-units-win-multimedia
+
+.. |fp-units-win-net-version| replace:: |____| → ``x86_64-win64``: Networking units
+.. _`fp-units-win-net-version`: https://packages.ubuntu.com/noble/fp-units-win-net
+
+.. |fp-units-win-wasm-version| replace:: |____| → ``x86_64-win64``: WebAssembly support units
+.. _`fp-units-win-wasm-version`: https://packages.ubuntu.com/noble/fp-units-win-wasm
+
+.. |pasdoc-name| replace:: :strong:`Pascal source code documentation`
+.. _`pasdoc-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=pasdoc
+
+.. |pasdoc-version| replace:: :strong:`v0.16.0`
+.. _`pasdoc-version`: https://packages.ubuntu.com/noble/pasdoc
+
 .. csv-table:: Scheme/Lisp programming
    :header: "Interpreter/Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
    :widths: 70 5 5 5 5 5 5
