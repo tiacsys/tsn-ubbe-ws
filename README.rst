@@ -472,6 +472,8 @@ Ubuntu system packages
    :widths: 5 65 5 5 5 5 5 5
    :stub-columns: 1
 
+   " ", "|ldc-name|_",                " ", " ", " ", " ", " ", " "
+   "x", "|ldc-version|_",             "x", "x", "x", "x", " ", " "
    " ", "|gdc-name|_",                " ", " ", " ", " ", " ", " "
    " ", "|gdc-10-version|_",          "x", "x", "x", "x", "x", "x"
    " ", "|gdc-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
@@ -485,6 +487,12 @@ Ubuntu system packages
    " ", "|gdc-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
 
 .. [*] Default version.
+
+.. |ldc-name| replace:: :strong:`LLVM D compiler`
+.. _`ldc-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=ldc
+
+.. |ldc-version| replace:: :strong:`v1.36`
+.. _`ldc-version`: https://packages.ubuntu.com/noble/ldc
 
 .. |gdc-name| replace:: :strong:`GNU D compiler`
 .. _`gdc-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gdc
