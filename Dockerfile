@@ -417,11 +417,146 @@ FROM rust-all AS rust
 
 # ############################################################################
 #
+# All architectures maintenance for OpenJDK Development Kit (JDK)
+#
+# ############################################################################
+
+FROM rust AS jdk-all
+
+# ############################################################################
+#
+# AMD/x86 64-bit architecture maintenance for OpenJDK Development Kit (JDK)
+#
+# ############################################################################
+
+FROM jdk-all AS jdk-amd64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    default-jdk \
+    openjdk-21-jdk \
+    openjdk-17-jdk \
+    openjdk-11-jdk \
+    openjdk-8-jdk \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv7 32-bit architecture maintenance for OpenJDK Development Kit (JDK)
+#
+# ############################################################################
+
+FROM jdk-all AS jdk-arm
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    default-jdk \
+    openjdk-21-jdk \
+    openjdk-17-jdk \
+    openjdk-11-jdk \
+    openjdk-8-jdk \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# ARMv8 64-bit architecture maintenance for OpenJDK Development Kit (JDK)
+#
+# ############################################################################
+
+FROM jdk-all AS jdk-arm64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    default-jdk \
+    openjdk-21-jdk \
+    openjdk-17-jdk \
+    openjdk-11-jdk \
+    openjdk-8-jdk \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# RISC-V 64-bit architecture maintenance for OpenJDK Development Kit (JDK)
+#
+# ############################################################################
+
+FROM jdk-all AS jdk-riscv64
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    default-jdk \
+    openjdk-21-jdk \
+    openjdk-17-jdk \
+    openjdk-11-jdk \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM POWER8 architecture maintenance for OpenJDK Development Kit (JDK)
+#
+# ############################################################################
+
+FROM jdk-all AS jdk-ppc64le
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    default-jdk \
+    openjdk-21-jdk \
+    openjdk-17-jdk \
+    openjdk-11-jdk \
+    openjdk-8-jdk \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# IBM z-Systems architecture maintenance for OpenJDK Development Kit (JDK)
+#
+# ############################################################################
+
+FROM jdk-all AS jdk-s390x
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    default-jdk \
+    openjdk-21-jdk \
+    openjdk-17-jdk \
+    openjdk-11-jdk \
+    openjdk-8-jdk \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for OpenJDK Development Kit (JDK)
+#
+# ############################################################################
+
+FROM jdk-${TARGETARCH} AS jdk
+
+# ############################################################################
+#
 # All architectures maintenance for GNU C/C++ compiler
 #
 # ############################################################################
 
-FROM rust AS gcc-all
+FROM jdk AS gcc-all
 
 # ############################################################################
 #

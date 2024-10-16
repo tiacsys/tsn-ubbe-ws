@@ -290,6 +290,34 @@ Ubuntu system packages
 .. |rustfmt-1.80-version| replace:: |____| → code formatter
 .. _`rustfmt-1.80-version`: https://packages.ubuntu.com/noble/rustfmt-1.80
 
+.. csv-table:: Java programming
+   :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 5 65 5 5 5 5 5 5
+   :stub-columns: 1
+
+   " ", "|openjdk-name|_",           " ", " ", " ", " ", " ", " "
+   " ", "|openjdk-8-jdk-version|_",  "x", "x", "x", " ", "x", "x"
+   " ", "|openjdk-11-jdk-version|_", "x", "x", "x", "x", "x", "x"
+   " ", "|openjdk-17-jdk-version|_", "x", "x", "x", "x", "x", "x"
+   "x", "|openjdk-21-jdk-version|_", "x", "x", "x", "x", "x", "x"
+
+.. [*] Default version.
+
+.. |openjdk-name| replace:: OpenJDK Development Kit (JDK)
+.. _`openjdk-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=openjdk
+
+.. |openjdk-8-jdk-version| replace:: :strong:`v8u422`
+.. _`openjdk-8-jdk-version`: https://packages.ubuntu.com/noble/openjdk-8-jdk
+
+.. |openjdk-11-jdk-version| replace:: :strong:`v11.0.24`
+.. _`openjdk-11-jdk-version`: https://packages.ubuntu.com/noble/openjdk-11-jdk
+
+.. |openjdk-17-jdk-version| replace:: :strong:`v17.0.12`
+.. _`openjdk-17-jdk-version`: https://packages.ubuntu.com/noble/openjdk-17-jdk
+
+.. |openjdk-21-jdk-version| replace:: :strong:`v21.0.4`
+.. _`openjdk-21-jdk-version`: https://packages.ubuntu.com/noble/openjdk-21-jdk
+
 .. csv-table:: C/C++ and Objective-C/C++ programming
    :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
    :widths: 5 65 5 5 5 5 5 5
