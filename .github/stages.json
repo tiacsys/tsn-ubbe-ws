@@ -5,6 +5,7 @@
 		{ "stage": "clang" },
 		{ "stage": "flang" },
 		{ "stage": "ldc" },
+		{ "stage": "golang" },
 		{ "stage": "gcc" },
 		{ "stage": "gobjc" },
 		{ "stage": "gdc" },
