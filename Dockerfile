@@ -386,11 +386,42 @@ FROM golang-all AS golang
 
 # ############################################################################
 #
+# All architectures maintenance for Rust systems programming language
+#
+# ############################################################################
+
+FROM golang AS rust-all
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    cargo \
+    rustc \
+    rust-clippy \
+    rustfmt \
+    cargo-1.80 \
+    rustc-1.80 \
+    rust-1.80-clippy \
+    rustfmt-1.80 \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for Rust systems programming language
+#
+# ############################################################################
+
+FROM rust-all AS rust
+
+# ############################################################################
+#
 # All architectures maintenance for GNU C/C++ compiler
 #
 # ############################################################################
 
-FROM golang AS gcc-all
+FROM rust AS gcc-all
 
 # ############################################################################
 #

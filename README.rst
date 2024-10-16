@@ -242,6 +242,54 @@ Ubuntu system packages
 .. |lld-version| replace:: :strong:`v18.1.3`
 .. _`lld-version`: https://packages.ubuntu.com/noble/lld
 
+.. csv-table:: Rust programming
+   :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
+   :widths: 5 65 5 5 5 5 5 5
+   :stub-columns: 1
+
+   " ", "|cargo-name|_",               " ", " ", " ", " ", " ", " "
+   "x", "|cargo-version|_",            "x", "x", "x", "x", "x", "x"
+   " ", "|cargo-1.80-version|_",       "x", "x", "x", "x", "x", "x"
+   " ", "|rust-name|_",                " ", " ", " ", " ", " ", " "
+   "x", "|rustc-version|_",            "x", "x", "x", "x", "x", "x"
+   "x", "|rust-clippy-version|_",      "x", "x", "x", "x", "x", "x"
+   "x", "|rustfmt-version|_",          "x", "x", "x", "x", "x", "x"
+   " ", "|rustc-1.80-version|_",       "x", "x", "x", "x", "x", "x"
+   " ", "|rust-1.80-clippy-version|_", "x", "x", "x", "x", "x", "x"
+   " ", "|rustfmt-1.80-version|_",     "x", "x", "x", "x", "x", "x"
+
+.. [*] Default version.
+
+.. |cargo-name| replace:: Cargo (package manager)
+.. _`cargo-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=cargo
+
+.. |cargo-version| replace:: :strong:`v1.75.0`
+.. _`cargo-version`: https://packages.ubuntu.com/noble/cargo
+
+.. |cargo-1.80-version| replace:: :strong:`v1.80.1`
+.. _`cargo-1.80-version`: https://packages.ubuntu.com/noble/cargo-1.80
+
+.. |rust-name| replace:: Rust compiler
+.. _`rust-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=rust
+
+.. |rustc-version| replace:: :strong:`v1.75.0`
+.. _`rustc-version`: https://packages.ubuntu.com/noble/rustc
+
+.. |rust-clippy-version| replace:: |____| → linter tool
+.. _`rust-clippy-version`: https://packages.ubuntu.com/noble/rust-clippy
+
+.. |rustfmt-version| replace:: |____| → code formatter
+.. _`rustfmt-version`: https://packages.ubuntu.com/noble/rustfmt
+
+.. |rustc-1.80-version| replace:: :strong:`v1.80.1`
+.. _`rustc-1.80-version`: https://packages.ubuntu.com/noble/rustc-1.80
+
+.. |rust-1.80-clippy-version| replace:: |____| → linter tool
+.. _`rust-1.80-clippy-version`: https://packages.ubuntu.com/noble/rust-1.80-clippy
+
+.. |rustfmt-1.80-version| replace:: |____| → code formatter
+.. _`rustfmt-1.80-version`: https://packages.ubuntu.com/noble/rustfmt-1.80
+
 .. csv-table:: C/C++ and Objective-C/C++ programming
    :header: "[*]_", "Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
    :widths: 5 65 5 5 5 5 5 5

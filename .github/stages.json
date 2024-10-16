@@ -6,6 +6,7 @@
 		{ "stage": "flang" },
 		{ "stage": "ldc" },
 		{ "stage": "golang" },
+		{ "stage": "rust" },
 		{ "stage": "gcc" },
 		{ "stage": "gobjc" },
 		{ "stage": "gdc" },
