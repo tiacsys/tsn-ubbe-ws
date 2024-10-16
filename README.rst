@@ -591,6 +591,10 @@ Ubuntu system packages
    :widths: 5 65 5 5 5 5 5 5
    :stub-columns: 1
 
+   " ", "|golang-go-name|_",            " ", " ", " ", " ", " ", " "
+   " ", "|golang-1.21-go-version|_",    "x", "x", "x", "x", "x", "x"
+   "x", "|golang-go-version|_",         "x", "x", "x", "x", "x", "x"
+   " ", "|golang-1.23-go-version|_",    "x", "x", "x", "x", "x", "x"
    " ", "|gccgo-name|_",                " ", " ", " ", " ", " ", " "
    " ", "|gccgo-10-version|_",          "x", "x", "x", "x", "x", "x"
    " ", "|gccgo-10-multilib-version|_", "x", " ", " ", " ", " ", "x"
@@ -604,6 +608,18 @@ Ubuntu system packages
    " ", "|gccgo-14-multilib-version|_", "x", " ", " ", " ", " ", "x"
 
 .. [*] Default version.
+
+.. |golang-go-name| replace:: :strong:`Golang Go compiler`
+.. _`golang-go-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=golang-go
+
+.. |golang-1.21-go-version| replace:: :strong:`v1.21`
+.. _`golang-1.21-go-version`: https://packages.ubuntu.com/noble/golang-1.21-go
+
+.. |golang-go-version| replace:: :strong:`v1.22`
+.. _`golang-go-version`: https://packages.ubuntu.com/noble/golang-go
+
+.. |golang-1.23-go-version| replace:: :strong:`v1.23`
+.. _`golang-1.23-go-version`: https://packages.ubuntu.com/noble-updates/golang-1.23-go
 
 .. |gccgo-name| replace:: :strong:`GNU Go compiler`
 .. _`gccgo-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gccgo

@@ -360,11 +360,37 @@ FROM ldc-${TARGETARCH} AS ldc
 
 # ############################################################################
 #
+# All architectures maintenance for Go programming language
+#
+# ############################################################################
+
+FROM ldc AS golang-all
+
+# Install requirements
+RUN apt-get --assume-yes update \
+ && apt-get --assume-yes install --no-install-recommends \
+    golang-1.21-go \
+    golang-go \
+    golang-1.23-go \
+ && apt-get --assume-yes autoremove --purge \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# ############################################################################
+#
+# Final maintenance for Go programming language
+#
+# ############################################################################
+
+FROM golang-all AS golang
+
+# ############################################################################
+#
 # All architectures maintenance for GNU C/C++ compiler
 #
 # ############################################################################
 
-FROM ldc AS gcc-all
+FROM golang AS gcc-all
 
 # ############################################################################
 #
