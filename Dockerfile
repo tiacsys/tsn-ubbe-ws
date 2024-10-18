@@ -1738,6 +1738,7 @@ FROM pascal AS lisp-all
 # Install requirements
 RUN apt-get --assume-yes update \
  && apt-get --assume-yes install --no-install-recommends \
+    clisp \
     gambc \
     guile-2.2 \
     guile-3.0 \
