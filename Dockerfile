@@ -1743,6 +1743,7 @@ FROM pascal-${TARGETARCH} AS pascal
 # ############################################################################
 #
 # All architectures maintenance for Scheme/Lisp Programming Tools
+# - JVM Common Lisp implementation
 # - GNU Common Lisp implementation
 # - GNU Common Lisp compiler
 # - Gambit Scheme interpreter and compiler
@@ -1756,6 +1757,7 @@ FROM pascal AS lisp-all
 # Install requirements
 RUN apt-get --assume-yes update \
  && apt-get --assume-yes install --no-install-recommends \
+    abcl \
     clisp \
     gcl \
     gcl27 \

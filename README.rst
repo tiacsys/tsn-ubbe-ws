@@ -1034,6 +1034,8 @@ Ubuntu system packages
    :header: "Interpreter/Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
    :widths: 70 5 5 5 5 5 5
 
+   "|abcl-name|_",              " ", " ", " ", " ", " ", " "
+   "|abcl-version|_",           "x", "x", "x", "x", "x", "x"
    "|clisp-name|_",             " ", " ", " ", " ", " ", " "
    "|clisp-version|_",          "x", "x", "x", "x", "x", "x"
    "|gcl-name|_",               " ", " ", " ", " ", " ", " "
@@ -1046,6 +1048,12 @@ Ubuntu system packages
    "|guile-3.0-version|_ [*]_", "x", "x", "x", "x", "x", "x"
 
 .. [*] with `JIT`_ compilation
+
+.. |abcl-name| replace:: :strong:`JVM Common Lisp implementation`
+.. _`abcl-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=abcl
+
+.. |abcl-version| replace:: :strong:`v2.7.0`
+.. _`abcl-version`: https://packages.ubuntu.com/noble/abcl
 
 .. |clisp-name| replace:: :strong:`GNU Common Lisp implementation`
 .. _`clisp-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=clisp
