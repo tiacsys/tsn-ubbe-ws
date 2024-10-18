@@ -1036,6 +1036,9 @@ Ubuntu system packages
 
    "|clisp-name|_",             " ", " ", " ", " ", " ", " "
    "|clisp-version|_",          "x", "x", "x", "x", "x", "x"
+   "|gcl-name|_",               " ", " ", " ", " ", " ", " "
+   "|gcl-version|_",            "x", "x", "x", "x", "x", "x"
+   "|gcl27-version|_",          "x", "x", "x", "x", "x", "x"
    "|gambc-name|_",             " ", " ", " ", " ", " ", " "
    "|gambc-version|_",          "x", "x", "x", "x", "x", "x"
    "|guile-name|_",             " ", " ", " ", " ", " ", " "
@@ -1049,6 +1052,15 @@ Ubuntu system packages
 
 .. |clisp-version| replace:: :strong:`v2.49`
 .. _`clisp-version`: https://packages.ubuntu.com/noble/clisp
+
+.. |gcl-name| replace:: :strong:`GNU Common Lisp compiler`
+.. _`gcl-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gcl
+
+.. |gcl-version| replace:: :strong:`v2.6.14`
+.. _`gcl-version`: https://packages.ubuntu.com/noble/gcl
+
+.. |gcl27-version| replace:: :strong:`v2.7.0`
+.. _`gcl27-version`: https://packages.ubuntu.com/noble/gcl27
 
 .. |gambc-name| replace:: :strong:`Gambit interpreter and compiler`
 .. _`gambc-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gambc
