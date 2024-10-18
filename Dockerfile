@@ -1743,6 +1743,7 @@ FROM pascal-${TARGETARCH} AS pascal
 # ############################################################################
 #
 # All architectures maintenance for Scheme/Lisp Programming Tools
+# - GNU Common Lisp implementation
 # - Gambit Scheme interpreter and compiler
 # - GNU Guile 2.2 interpreter
 # - GNU Guile 3.0 JIT compiler
@@ -1754,6 +1755,7 @@ FROM pascal AS lisp-all
 # Install requirements
 RUN apt-get --assume-yes update \
  && apt-get --assume-yes install --no-install-recommends \
+    clisp \
     gambc \
     guile-2.2 \
     guile-3.0 \

@@ -1034,6 +1034,8 @@ Ubuntu system packages
    :header: "Interpreter/Compiler", "``amd64``", "``arm/v7``", "``arm64/v8``", "``riscv64``", "``ppc64le``", "``s390x``"
    :widths: 70 5 5 5 5 5 5
 
+   "|clisp-name|_",             " ", " ", " ", " ", " ", " "
+   "|clisp-version|_",          "x", "x", "x", "x", "x", "x"
    "|gambc-name|_",             " ", " ", " ", " ", " ", " "
    "|gambc-version|_",          "x", "x", "x", "x", "x", "x"
    "|guile-name|_",             " ", " ", " ", " ", " ", " "
@@ -1041,6 +1043,12 @@ Ubuntu system packages
    "|guile-3.0-version|_ [*]_", "x", "x", "x", "x", "x", "x"
 
 .. [*] with `JIT`_ compilation
+
+.. |clisp-name| replace:: :strong:`GNU Common Lisp implementation`
+.. _`clisp-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=clisp
+
+.. |clisp-version| replace:: :strong:`v2.49`
+.. _`clisp-version`: https://packages.ubuntu.com/noble/clisp
 
 .. |gambc-name| replace:: :strong:`Gambit interpreter and compiler`
 .. _`gambc-name`: https://packages.ubuntu.com/search?suite=noble&section=all&searchon=names&keywords=gambc
