@@ -44,7 +44,7 @@ FROM ghcr.io/tiacsys/tsn-asdf-ws:2024.10.1 AS base
 
 # overwrite Ubuntu default metadata
 LABEL mantainer="Stephan Linz <stephan.linz@tiac-systems.de>"
-LABEL version="unstable"
+LABEL version="2024.10.0"
 
 # ############################################################################
 
