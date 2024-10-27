@@ -69,10 +69,21 @@ RUN apt-get --assume-yes update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+
+#  -- about 10 minutes
+#  _______________________________
+#      _      _    _    _   _   _
+#      /      /    |   /    /  /|
+#  ---/------/-----|--/----/| /-|-
+#    /      /      | /    / |/  |
+#  _/____/_/____/__|/____/__/___|_
+#
+#
+
 # ############################################################################
-#
-# All architectures maintenance for Low-Level Virtual Machine (LLVM)
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for Low-Level Virtual Machine (LLVM)┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM base AS llvm-all
@@ -92,17 +103,28 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for Low-Level Virtual Machine (LLVM)
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for Low-Level Virtual Machine (LLVM)         ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM llvm-all AS llvm
 
+
+#  -- about 10 minutes
+#  ________________________________
+#        __
+#      /    )   /
+#  ---/--------/----__----__----__-
+#    /        /   /   ) /   ) /   )
+#  _(____/___/___(___(_/___/_(___/_
+#                               /
+#                           (_ /
+
 # ############################################################################
-#
-# All architectures maintenance for LLVM C/C++ and Objective-C compiler
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for LLVM C/C++ and Objective-C      ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM llvm AS clang-all
@@ -135,24 +157,36 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for LLVM C/C++ and Objective-C compiler
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for LLVM C/C++ and Objective-C compiler      ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM clang-all AS clang
 
+
+#  -- about 10 minutes
+#  ________________________________
+#      _____
+#      /    '   /
+#  ---/__------/----__----__----__-
+#    /        /   /   ) /   ) /   )
+#  _/________/___(___(_/___/_(___/_
+#                               /
+#                           (_ /
+
 # ############################################################################
-#
-# All architectures maintenance for LLVM Fortran 95 / 2018 compiler
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for LLVM Fortran 95 / 2018 compiler ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM clang AS flang-all
 
 # ############################################################################
 #
-# AMD/x86 64-bit architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#   AMD/x86 64-bit architecture maintenance for               /||\/||\ / /|
+#   LLVM Fortran 95 / 2018 compiler                          /-||  ||/(_)~|~
 #
 # ############################################################################
 
@@ -172,7 +206,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv7 32-bit architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#   ARMv7 32-bit architecture maintenance for                       /||)|\/|
+#   LLVM Fortran 95 / 2018 compiler                                /-||\|  |
 #
 # ############################################################################
 
@@ -188,7 +223,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv8 64-bit architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#   ARMv8 64-bit architecture maintenance for                 /||)|\/| / /|
+#   LLVM Fortran 95 / 2018 compiler                          /-||\|  |(_)~|~
 #
 # ############################################################################
 
@@ -208,7 +244,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# RISC-V 64-bit architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#   RISC-V 64-bit architecture maintenance for               |)|(`/`| // /|
+#   LLVM Fortran 95 / 2018 compiler                          |\|_)\,|/(_)~|~
 #
 # ############################################################################
 
@@ -228,7 +265,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM POWER8 architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#   IBM POWER8 architecture maintenance for                 |)|)/` / /| | [~
+#   LLVM Fortran 95 / 2018 compiler                         | | \,(_)~|~|_[_
 #
 # ############################################################################
 
@@ -248,31 +286,44 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM z-Systems architecture maintenance for LLVM Fortran 95 / 2018 compiler
+#   IBM z-Systems architecture maintenance for                   (`')(~)/\\/
+#   LLVM Fortran 95 / 2018 compiler                              _).) / \//\
 #
 # ############################################################################
 
 FROM flang-all AS flang-s390x
 
 # ############################################################################
-#
-# Final maintenance for LLVM Fortran 95 / 2018 compiler
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for LLVM Fortran 95 / 2018 compiler          ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM flang-${TARGETARCH} AS flang
 
+
+#  -- about 10 minutes
+#  ________________________________
+#      _____
+#      /    )   /
+#  ---/----/---/----__----__----__-
+#    /    /   /   /   ) /   ) /   )
+#  _/____/___/___(___(_/___/_(___/_
+#                               /
+#                           (_ /
+
 # ############################################################################
-#
-# All architectures maintenance for LLVM D compiler
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for LLVM D compiler                 ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM flang AS ldc-all
 
 # ############################################################################
 #
-# AMD/x86 64-bit architecture maintenance for LLVM D compiler
+#   AMD/x86 64-bit architecture maintenance for               /||\/||\ / /|
+#   LLVM D compiler                                          /-||  ||/(_)~|~
 #
 # ############################################################################
 
@@ -288,7 +339,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv7 32-bit architecture maintenance for LLVM D compiler
+#   ARMv7 32-bit architecture maintenance for                       /||)|\/|
+#   LLVM D compiler                                                /-||\|  |
 #
 # ############################################################################
 
@@ -304,7 +356,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv8 64-bit architecture maintenance for LLVM D compiler
+#   ARMv8 64-bit architecture maintenance for                 /||)|\/| / /|
+#   LLVM D compiler                                          /-||\|  |(_)~|~
 #
 # ############################################################################
 
@@ -320,7 +373,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# RISC-V 64-bit architecture maintenance for LLVM D compiler
+#   RISC-V 64-bit architecture maintenance for               |)|(`/`| // /|
+#   LLVM D compiler                                          |\|_)\,|/(_)~|~
 #
 # ############################################################################
 
@@ -336,7 +390,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM POWER8 architecture maintenance for LLVM D compiler
+#   IBM POWER8 architecture maintenance for                 |)|)/` / /| | [~
+#   LLVM D compiler                                         | | \,(_)~|~|_[_
 #
 # ############################################################################
 
@@ -344,24 +399,36 @@ FROM ldc-all AS ldc-ppc64le
 
 # ############################################################################
 #
-# IBM z-Systems architecture maintenance for LLVM D compiler
+#   IBM z-Systems architecture maintenance for                   (`')(~)/\\/
+#   LLVM D compiler                                              _).) / \//\
 #
 # ############################################################################
 
 FROM ldc-all AS ldc-s390x
 
 # ############################################################################
-#
-# Final maintenance for LLVM D compiler
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for LLVM D compiler                          ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM ldc-${TARGETARCH} AS ldc
 
+
+#  -- about 10 minutes
+#  ______________________________________
+#        __
+#      /    )         /
+#  ---/---------__---/----__----__----__-
+#    /  --,   /   ) /   /   ) /   ) /   )
+#  _(____/___(___/_/___(___(_/___/_(___/_
+#                                     /
+#                                 (_ /
+
 # ############################################################################
-#
-# All architectures maintenance for Go programming language
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for Go programming language         ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM ldc AS golang-all
@@ -377,17 +444,28 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for Go programming language
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for Go programming language                  ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM golang-all AS golang
 
+
+#  -- about 10 minutes
+#  ___________________________
+#      ____
+#      /    )
+#  ---/___ /----------__--_/_-
+#    /    |   /   /  (_ ` /
+#  _/_____|__(___(__(__)_(_ __
+#
+#
+
 # ############################################################################
-#
-# All architectures maintenance for Rust systems programming language
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for Rust programming language       ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM golang AS rust-all
@@ -408,24 +486,36 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for Rust systems programming language
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for Rust programming language                ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM rust-all AS rust
 
+
+#  -- about 10 minutes
+#  _________________________________________________________
+#        __                             __   _____    _    _
+#      /    )                           /    /    )   /  ,'
+#  ---/----/------__----__----__-------/----/----/---/_.'---
+#    /    /     /   ) /___) /   )     /    /    /   /  \
+#  _(____/_____/___/_(___ _/___/_(___/____/____/___/____\___
+#             /
+#            /
+
 # ############################################################################
-#
-# All architectures maintenance for OpenJDK Development Kit (JDK)
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for OpenJDK Development Kit (JDK)   ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM rust AS jdk-all
 
 # ############################################################################
 #
-# AMD/x86 64-bit architecture maintenance for OpenJDK Development Kit (JDK)
+#   AMD/x86 64-bit architecture maintenance for               /||\/||\ / /|
+#   OpenJDK Development Kit (JDK)                            /-||  ||/(_)~|~
 #
 # ############################################################################
 
@@ -445,7 +535,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv7 32-bit architecture maintenance for OpenJDK Development Kit (JDK)
+#   ARMv7 32-bit architecture maintenance for                       /||)|\/|
+#   OpenJDK Development Kit (JDK)                                  /-||\|  |
 #
 # ############################################################################
 
@@ -465,7 +556,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv8 64-bit architecture maintenance for OpenJDK Development Kit (JDK)
+#   ARMv8 64-bit architecture maintenance for                 /||)|\/| / /|
+#   OpenJDK Development Kit (JDK)                            /-||\|  |(_)~|~
 #
 # ############################################################################
 
@@ -485,7 +577,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# RISC-V 64-bit architecture maintenance for OpenJDK Development Kit (JDK)
+#   RISC-V 64-bit architecture maintenance for               |)|(`/`| // /|
+#   OpenJDK Development Kit (JDK)                            |\|_)\,|/(_)~|~
 #
 # ############################################################################
 
@@ -504,7 +597,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM POWER8 architecture maintenance for OpenJDK Development Kit (JDK)
+#   IBM POWER8 architecture maintenance for                 |)|)/` / /| | [~
+#   OpenJDK Development Kit (JDK)                           | | \,(_)~|~|_[_
 #
 # ############################################################################
 
@@ -524,7 +618,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM z-Systems architecture maintenance for OpenJDK Development Kit (JDK)
+#   IBM z-Systems architecture maintenance for                   (`')(~)/\\/
+#   OpenJDK Development Kit (JDK)                                _).) / \//\
 #
 # ############################################################################
 
@@ -543,29 +638,42 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for OpenJDK Development Kit (JDK)
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for OpenJDK Development Kit (JDK)            ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM jdk-${TARGETARCH} AS jdk
 
+
+#  -- about 10 minutes
+#  ________________________________________________ __________________
+#        __     _     _   _     _        __               __
+#      /    )   /|   /    /    /       /    )   /       /    )
+#  ---/--------/-| -/----/----/-------/--------/-------/------_|_-_|_-
+#    /  --,   /  | /    /    /       /        /       /        |   |
+#  _(____/___/___|/____(____/_______(____/___/_______(____/___________
+#
+#
+
 # ############################################################################
-#
-# All architectures maintenance for GNU C/C++ compiler
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for GNU C/C++ compiler              ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM jdk AS gcc-all
 
 # ############################################################################
 #
-# AMD/x86 64-bit architecture maintenance for GNU C/C++ compiler (multilib)
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
-#   - Win64/Win32
+#   AMD/x86 64-bit architecture maintenance for               /||\/||\ / /|
+#   GNU C/C++ compiler (multilib)                            /-||  ||/(_)~|~
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
+#   -- Win64/Win32
 #
 # ############################################################################
 
@@ -603,11 +711,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv7 32-bit architecture maintenance for GNU C/C++ compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   ARMv7 32-bit architecture maintenance for                       /||)|\/|
+#   GNU C/C++ compiler                                             /-||\|  |
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -635,11 +745,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv8 64-bit architecture maintenance for GNU C/C++ compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   ARMv8 64-bit architecture maintenance for                 /||)|\/| / /|
+#   GNU C/C++ compiler                                       /-||\|  |(_)~|~
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -667,11 +779,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# RISC-V 64-bit architecture maintenance for GNU C/C++ compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   RISC-V 64-bit architecture maintenance for               |)|(`/`| // /|
+#   GNU C/C++ compiler                                       |\|_)\,|/(_)~|~
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -699,11 +813,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM POWER8 architecture maintenance for GNU C/C++ compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   IBM POWER8 architecture maintenance for                 |)|)/` / /| | [~
+#   GNU C/C++ compiler                                      | | \,(_)~|~|_[_
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -731,11 +847,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM z-Systems architecture maintenance for GNU C/C++ compiler (multilib)
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   IBM z-Systems architecture maintenance for                   (`')(~)/\\/
+#   GNU C/C++ compiler (multilib)                                _).) / \//\
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -772,28 +890,41 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for GNU C/C++ compiler
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for GNU C/C++ compiler                       ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM gcc-${TARGETARCH} AS gcc
 
+
+#  -- about 10 minutes
+#  ___________________________________________________________________________ __________________
+#        __     _     _   _     _        __                         __               __
+#      /    )   /|   /    /    /       /    )   /         ,       /    )   /       /    )
+#  ---/--------/-| -/----/----/-------/----/---/__---------------/--------/-------/------_|_-_|_-
+#    /  --,   /  | /    /    /       /    /   /   )     /  ===  /        /       /        |   |
+#  _(____/___/___|/____(____/_______(____/___(___/_____/_______(____/___/_______(____/___________
+#                                                     /
+#                                                 (_ /
+
 # ############################################################################
-#
-# All architectures maintenance for GNU Objective-C/C++ compiler
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for GNU Objective-C/C++ compiler    ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM gcc AS gobjc-all
 
 # ############################################################################
 #
-# AMD/x86 64-bit architecture maintenance for GNU Objective-C/C++ compiler (multilib)
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   AMD/x86 64-bit architecture maintenance for               /||\/||\ / /|
+#   GNU Objective-C/C++ compiler (multilib)                  /-||  ||/(_)~|~
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -830,11 +961,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv7 32-bit architecture maintenance for GNU Objective-C/C++ compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   ARMv7 32-bit architecture maintenance for                       /||)|\/|
+#   GNU Objective-C/C++ compiler                                   /-||\|  |
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -861,11 +994,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv8 64-bit architecture maintenance for GNU Objective-C/C++ compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   ARMv8 64-bit architecture maintenance for                 /||)|\/| / /|
+#   GNU Objective-C/C++ compiler                             /-||\|  |(_)~|~
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -892,11 +1027,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# RISC-V 64-bit architecture maintenance for GNU Objective-C/C++ compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   RISC-V 64-bit architecture maintenance for               |)|(`/`| // /|
+#   GNU Objective-C/C++ compiler                             |\|_)\,|/(_)~|~
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -923,11 +1060,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM POWER8 architecture maintenance for GNU Objective-C/C++ compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   IBM POWER8 architecture maintenance for                 |)|)/` / /| | [~
+#   GNU Objective-C/C++ compiler                            | | \,(_)~|~|_[_
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -954,11 +1093,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM z-Systems architecture maintenance for GNU Objective-C/C++ compiler (multilib)
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   IBM z-Systems architecture maintenance for                   (`')(~)/\\/
+#   GNU Objective-C/C++ compiler (multilib)                      _).) / \//\
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -994,24 +1135,36 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for GNU Objective-C/C++ compiler
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for GNU Objective-C/C++ compiler             ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM gobjc-${TARGETARCH} AS gobjc
 
+
+#  -- about 10 minutes
+#  __________________________________________
+#        __     _     _   _     _      _____
+#      /    )   /|   /    /    /       /    )
+#  ---/--------/-| -/----/----/-------/----/-
+#    /  --,   /  | /    /    /       /    /
+#  _(____/___/___|/____(____/_______/____/___
+#
+#
+
 # ############################################################################
-#
-# All architectures maintenance for GNU D compiler
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for GNU D compiler                  ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM gobjc AS gdc-all
 
 # ############################################################################
 #
-# AMD/x86 64-bit architecture maintenance for GNU D compiler (multilib)
+#   AMD/x86 64-bit architecture maintenance for               /||\/||\ / /|
+#   GNU D compiler (multilib)                                /-||  ||/(_)~|~
 #
 # ############################################################################
 
@@ -1036,7 +1189,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv7 32-bit architecture maintenance for GNU D compiler
+#   ARMv7 32-bit architecture maintenance for                       /||)|\/|
+#   GNU D compiler                                                 /-||\|  |
 #
 # ############################################################################
 
@@ -1056,7 +1210,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv8 64-bit architecture maintenance for GNU D compiler
+#   ARMv8 64-bit architecture maintenance for                 /||)|\/| / /|
+#   GNU D compiler                                           /-||\|  |(_)~|~
 #
 # ############################################################################
 
@@ -1076,7 +1231,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# RISC-V 64-bit architecture maintenance for GNU D compiler
+#   RISC-V 64-bit architecture maintenance for               |)|(`/`| // /|
+#   GNU D compiler                                           |\|_)\,|/(_)~|~
 #
 # ############################################################################
 
@@ -1096,7 +1252,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM POWER8 architecture maintenance for GNU D compiler
+#   IBM POWER8 architecture maintenance for                 |)|)/` / /| | [~
+#   GNU D compiler                                          | | \,(_)~|~|_[_
 #
 # ############################################################################
 
@@ -1116,7 +1273,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM z-Systems architecture maintenance for GNU D compiler (multilib)
+#   IBM z-Systems architecture maintenance for                   (`')(~)/\\/
+#   GNU D compiler (multilib)                                    _).) / \//\
 #
 # ############################################################################
 
@@ -1140,24 +1298,36 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for GNU D compiler
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for GNU D compiler                           ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM gdc-${TARGETARCH} AS gdc
 
+
+#  -- about 10 minutes
+#  ________________________________________________
+#        __     _     _   _     _        __
+#      /    )   /|   /    /    /       /    )
+#  ---/--------/-| -/----/----/-------/---------__-
+#    /  --,   /  | /    /    /       /  --,   /   )
+#  _(____/___/___|/____(____/_______(____/___(___/_
+#
+#
+
 # ############################################################################
-#
-# All architectures maintenance for GNU Go compiler
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for GNU Go compiler                 ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM gdc AS gccgo-all
 
 # ############################################################################
 #
-# AMD/x86 64-bit architecture maintenance for GNU Go compiler (multilib)
+#   AMD/x86 64-bit architecture maintenance for               /||\/||\ / /|
+#   GNU Go compiler (multilib)                               /-||  ||/(_)~|~
 #
 # ############################################################################
 
@@ -1182,7 +1352,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv7 32-bit architecture maintenance for GNU Go compiler
+#   ARMv7 32-bit architecture maintenance for                       /||)|\/|
+#   GNU Go compiler                                                /-||\|  |
 #
 # ############################################################################
 
@@ -1202,7 +1373,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv8 64-bit architecture maintenance for GNU Go compiler
+#   ARMv8 64-bit architecture maintenance for                 /||)|\/| / /|
+#   GNU Go compiler                                          /-||\|  |(_)~|~
 #
 # ############################################################################
 
@@ -1222,7 +1394,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# RISC-V 64-bit architecture maintenance for GNU Go compiler
+#   RISC-V 64-bit architecture maintenance for               |)|(`/`| // /|
+#   GNU Go compiler                                          |\|_)\,|/(_)~|~
 #
 # ############################################################################
 
@@ -1242,7 +1415,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM POWER8 architecture maintenance for GNU Go compiler
+#   IBM POWER8 architecture maintenance for                 |)|)/` / /| | [~
+#   GNU Go compiler                                         | | \,(_)~|~|_[_
 #
 # ############################################################################
 
@@ -1262,7 +1436,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM z-Systems architecture maintenance for GNU Go compiler (multilib)
+#   IBM z-Systems architecture maintenance for                   (`')(~)/\\/
+#   GNU Go compiler (multilib)                                   _).) / \//\
 #
 # ############################################################################
 
@@ -1286,28 +1461,41 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for GNU Go compiler
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for GNU Go compiler                          ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM gccgo-${TARGETARCH} AS gccgo
 
+
+#  -- about 10 minutes
+#  ___________________________________________________________________________________________________
+#        __     _     _   _     _      _____                                             __      ____
+#      /    )   /|   /    /    /       /    '                                          /    )   /
+#  ---/--------/-| -/----/----/-------/__-------__---)__--_/_---)__----__----__-------(___ /---/___---
+#    /  --,   /  | /    /    /       /        /   ) /   ) /    /   ) /   ) /   )          /        )
+#  _(____/___/___|/____(____/_______/________(___/_/_____(_ __/_____(___(_/___/_____(____/___(____/___
+#
+#
+
 # ############################################################################
-#
-# All architectures maintenance for GNU Fortran 95 compiler
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for GNU Fortran 95 compiler         ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM gccgo AS gfortran-all
 
 # ############################################################################
 #
-# AMD/x86 64-bit architecture maintenance for GNU Fortran 95 compiler (multilib)
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   AMD/x86 64-bit architecture maintenance for               /||\/||\ / /|
+#   GNU Fortran 95 compiler (multilib)                       /-||  ||/(_)~|~
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -1333,11 +1521,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv7 32-bit architecture maintenance for GNU Fortran 95 compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   ARMv7 32-bit architecture maintenance for                       /||)|\/|
+#   GNU Fortran 95 compiler                                        /-||\|  |
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -1358,11 +1548,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv8 64-bit architecture maintenance for GNU Fortran 95 compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   ARMv8 64-bit architecture maintenance for                 /||)|\/| / /|
+#   GNU Fortran 95 compiler                                  /-||\|  |(_)~|~
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -1383,11 +1575,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# RISC-V 64-bit architecture maintenance for GNU Fortran 95 compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   RISC-V 64-bit architecture maintenance for               |)|(`/`| // /|
+#   GNU Fortran 95 compiler                                  |\|_)\,|/(_)~|~
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -1408,11 +1602,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM POWER8 architecture maintenance for GNU Fortran 95 compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   IBM POWER8 architecture maintenance for                 |)|)/` / /| | [~
+#   GNU Fortran 95 compiler                                 | | \,(_)~|~|_[_
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -1433,11 +1629,13 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM z-Systems architecture maintenance for GNU Fortran 95 compiler (multilib)
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#   IBM z-Systems architecture maintenance for                   (`')(~)/\\/
+#   GNU Fortran 95 compiler (multilib)                           _).) / \//\
+#
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -1462,17 +1660,28 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for GNU Fortran 95 compiler
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for GNU Fortran 95 compiler                  ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM gfortran-${TARGETARCH} AS gfortran
 
+
+#  -- about 10 minutes
+#  _______________________________________________________________________________________
+#        __     _     _   _     _      _   _                                         __
+#      /    )   /|   /    /    /       /  /|              /          /             /    )
+#  ---/--------/-| -/----/----/-------/| /-|----__----__-/----------/----__---------___/--
+#    /  --,   /  | /    /    /       / |/  |  /   ) /   /   /   /  /   /   ) ===  /
+#  _(____/___/___|/____(____/_______/__/___|_(___/_(___/___(___(__/___(___(______/____/___
+#
+#
+
 # ############################################################################
-#
-# All architectures maintenance for GNU Modula-2 compiler
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for GNU Modula-2 compiler           ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM gfortran AS gm2-all
@@ -1492,20 +1701,32 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for GNU Modula-2 compiler
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for GNU Modula-2 compiler                    ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM gm2-all AS gm2
 
-# ############################################################################
+
+#  -- about 10 minutes
+#  ______________________________________________________
+#        __     _     _   _     _      __
+#      /    )   /|   /    /    /       / |        /
+#  ---/--------/-| -/----/----/-------/__|----__-/----__-
+#    /  --,   /  | /    /    /       /   |  /   /   /   )
+#  _(____/___/___|/____(____/_______/____|_(___/___(___(_
 #
-# All architectures maintenance for GNU Ada compiler
-# - with Win32 and Win64 using MinGW-w64 for
-#   - Win32/POSIX
-#   - Win32/Win32
-#   - Win64/POSIX
+#
+
+# ############################################################################
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for GNU Ada compiler                ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
+#   -- with Win32 and Win64 using MinGW-w64 for
+#   -- Win32/POSIX
+#   -- Win32/Win32
+#   -- Win64/POSIX
 #
 # ############################################################################
 
@@ -1523,17 +1744,29 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for GNU Ada compiler
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for GNU Ada compiler                         ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM gnat-all AS gnat
 
-# ############################################################################
+
+#  -- about 10 minutes
+#  ____________________________________________
+#        __       __     ____       __     _
+#      /    )   /    )   /   )    /    )   /
+#  ---/--------/----/---/__ /----/----/---/----
+#    /        /    /   /    )   /    /   /
+#  _(____/___(____/___/____/___(____/___/____/_
 #
-# All architectures maintenance for COBOL Programming Tools
-# - GNU COBOL compiler
+#
+
+# ############################################################################
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for COBOL Programming Tools         ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
+#   -- GNU COBOL compiler
 #
 # ############################################################################
 
@@ -1548,17 +1781,29 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for COBOL Programming Tools
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for COBOL Programming Tools                  ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM cobol-all AS cobol
 
-# ############################################################################
+
+#  -- about 10 minutes
+#  _________________________________
+#      _____
+#      /    '                    /
+#  ---/__-------__---)__--_/_---/__-
+#    /        /   ) /   ) /    /   )
+#  _/________(___/_/_____(_ __/___/_
 #
-# All architectures maintenance for Forth Programming Tools
-# - GNU Forth Language Environment
+#
+
+# ############################################################################
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for Forth Programming Tools         ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
+#   -- GNU Forth Language Environment
 #
 # ############################################################################
 
@@ -1573,17 +1818,29 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for Forth Programming Tools
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for Forth Programming Tools                  ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM forth-all AS forth
 
-# ############################################################################
+
+#  -- about 10 minutes
+#  _____________________________________
+#      ____
+#      /    )                          /
+#  ---/____/----__---__----__----__---/-
+#    /        /   ) (_ ` /   ' /   ) /
+#  _/________(___(_(__)_(___ _(___(_/___
 #
-# All architectures maintenance for Pascal Programming Tools
-# - Free Pascal compiler
+#
+
+# ############################################################################
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for Pascal Programming Tools        ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
+#   -- Free Pascal compiler
 #
 # ############################################################################
 
@@ -1591,7 +1848,8 @@ FROM forth AS pascal-all
 
 # ############################################################################
 #
-# AMD/x86 64-bit architecture maintenance for Pascal Programming Tools
+#   AMD/x86 64-bit architecture maintenance for               /||\/||\ / /|
+#   Pascal Programming Tools                                 /-||  ||/(_)~|~
 #
 # ############################################################################
 
@@ -1631,7 +1889,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv7 32-bit architecture maintenance for Pascal Programming Tools
+#   ARMv7 32-bit architecture maintenance for                       /||)|\/|
+#   Pascal Programming Tools                                       /-||\|  |
 #
 # ############################################################################
 
@@ -1660,7 +1919,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv8 64-bit architecture maintenance for Pascal Programming Tools
+#   ARMv8 64-bit architecture maintenance for                 /||)|\/| / /|
+#   Pascal Programming Tools                                 /-||\|  |(_)~|~
 #
 # ############################################################################
 
@@ -1689,7 +1949,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# RISC-V 64-bit architecture maintenance for Pascal Programming Tools
+#   RISC-V 64-bit architecture maintenance for               |)|(`/`| // /|
+#   Pascal Programming Tools                                 |\|_)\,|/(_)~|~
 #
 # ############################################################################
 
@@ -1697,7 +1958,8 @@ FROM pascal-all AS pascal-riscv64
 
 # ############################################################################
 #
-# IBM POWER8 architecture maintenance for Pascal Programming Tools
+#   IBM POWER8 architecture maintenance for                 |)|)/` / /| | [~
+#   Pascal Programming Tools                                | | \,(_)~|~|_[_
 #
 # ############################################################################
 
@@ -1726,29 +1988,42 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM z-Systems architecture maintenance for Pascal Programming Tools
+#   IBM z-Systems architecture maintenance for                   (`')(~)/\\/
+#   Pascal Programming Tools                                     _).) / \//\
 #
 # ############################################################################
 
 FROM pascal-all AS pascal-s390x
 
 # ############################################################################
-#
-# Final maintenance for Forth Programming Tools
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for Pascal Programming Tools                 ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM pascal-${TARGETARCH} AS pascal
 
+
+#  -- about 10 minutes
+#  _______________________________________________ _________________________
+#        __                                            _
+#      /    )         /                        /       /      ,
+#  ----\--------__---/__----__---_--_----__---/-------/----------__------__-
+#       \     /   ' /   ) /___) / /  ) /___) /       /      /   (_ `   /   )
+#  _(____/___(___ _/___/_(___ _/_/__/_(___ _/_______/____/_/___(__)___/___/_
+#                                                                    /
+#                                                                   /
+
 # ############################################################################
-#
-# All architectures maintenance for Scheme/Lisp Programming Tools
-# - JVM Common Lisp implementation
-# - GNU Common Lisp implementation
-# - GNU Common Lisp compiler
-# - Gambit Scheme interpreter and compiler
-# - GNU Guile 2.2 interpreter
-# - GNU Guile 3.0 JIT compiler
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for Scheme/Lisp Programming Tools   ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
+#   -- JVM Common Lisp implementation
+#   -- GNU Common Lisp implementation
+#   -- GNU Common Lisp compiler
+#   -- Gambit Scheme interpreter and compiler
+#   -- GNU Guile 2.2 interpreter
+#   -- GNU Guile 3.0 JIT compiler
 #
 # ############################################################################
 
@@ -1769,21 +2044,33 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for Scheme/Lisp Programming Tools
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for Scheme/Lisp Programming Tools            ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM lisp-all AS lisp
 
-# ############################################################################
+
+#  -- about 10 minutes
+#  _________________________________ __________________________________
+#      _   _                             _   _
+#      /  /|                     /       /  /|
+#  ---/| /-|----__--_/_----__---/-------/| /-|----__----__---)__----__-
+#    / |/  |  /___) /    /   ) /       / |/  |  /   ) /   ' /   ) /   )
+#  _/__/___|_(___ _(_ __(___(_/_______/__/___|_(___(_(___ _/_____(___/_
 #
-# All architectures maintenance for Meta Programming Tools
-# - GNU Bison YACC parser generator
-# - Berkeley LALR YACC parser generator
-# - Not Yet Another Compiler Compiler
-# - Look-Ahead TDFA lexer generator
-# - M4 macro processing language
+#
+
+# ############################################################################
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for Meta Programming Tools          ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
+#   -- GNU Bison YACC parser generator
+#   -- Berkeley LALR YACC parser generator
+#   -- Not Yet Another Compiler Compiler
+#   -- Look-Ahead TDFA lexer generator
+#   -- M4 macro processing language
 #
 # ############################################################################
 
@@ -1804,17 +2091,28 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for Meta Programming Tools
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for Meta Programming Tools                   ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM meta-all AS meta
 
+
+#  -- about 10 minutes
+#  _____________________________________________________________________________________
+#        __     _     _   _     _      _____                 ______
+#      /    )   /|   /    /    /       /    )                  /                  /
+#  ---/--------/-| -/----/----/-------/----/----__------------/-------__----__---/---__-
+#    /  --,   /  | /    /    /       /    /   /___) | / ===  /      /   ) /   ) /   (_ `
+#  _(____/___/___|/____(____/_______/____/___(___ __|/______/______(___/_(___/_/___(__)_
+#
+#
+
 # ############################################################################
-#
-# All architectures maintenance for GNU development tools
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for GNU development tools           ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM meta AS gnu-all
@@ -1843,24 +2141,36 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for GNU development tools
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for GNU development tools                    ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM gnu-all AS gnu
 
+
+#  -- about 20 minutes
+#  _________________________________________
+#      __
+#      / |        /       /
+#  ---/__|----__-/----__-/----__----__---__-
+#    /   |  /   /   /   /   /   ) /   ) (_ `
+#  _/____|_(___/___(___/___(___/_/___/_(__)_
+#
+#
+
 # ############################################################################
-#
-# All architectures maintenance for additional development tools
-#
+#                                                                     ┏┓┓ ┓
+#   All architectures maintenance for additional development tools    ┣┫┃ ┃
+#                                                                     ┛┗┗┛┗┛
 # ############################################################################
 
 FROM gnu AS addons-all
 
 # ############################################################################
 #
-# AMD/x86 64-bit architecture maintenance for additional development tools
+#   AMD/x86 64-bit architecture maintenance for               /||\/||\ / /|
+#   additional development tools                             /-||  ||/(_)~|~
 #
 # ############################################################################
 
@@ -1894,7 +2204,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv7 32-bit architecture maintenance for additional development tools
+#   ARMv7 32-bit architecture maintenance for                       /||)|\/|
+#   additional development tools                                   /-||\|  |
 #
 # ############################################################################
 
@@ -1928,7 +2239,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# ARMv8 64-bit architecture maintenance for additional development tools
+#   ARMv8 64-bit architecture maintenance for                 /||)|\/| / /|
+#   additional development tools                             /-||\|  |(_)~|~
 #
 # ############################################################################
 
@@ -1962,7 +2274,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# RISC-V 64-bit architecture maintenance for additional development tools
+#   RISC-V 64-bit architecture maintenance for               |)|(`/`| // /|
+#   additional development tools                             |\|_)\,|/(_)~|~
 #
 # ############################################################################
 
@@ -1995,7 +2308,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM POWER8 architecture maintenance for additional development tools
+#   IBM POWER8 architecture maintenance for                 |)|)/` / /| | [~
+#   additional development tools                            | | \,(_)~|~|_[_
 #
 # ############################################################################
 
@@ -2029,7 +2343,8 @@ RUN apt-get --assume-yes update \
 
 # ############################################################################
 #
-# IBM z-Systems architecture maintenance for additional development tools
+#   IBM z-Systems architecture maintenance for                   (`')(~)/\\/
+#   additional development tools                                 _).) / \//\
 #
 # ############################################################################
 
@@ -2062,9 +2377,9 @@ RUN apt-get --assume-yes update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ############################################################################
-#
-# Final maintenance for additional development tools
-#
+#                                                                  ┏┓┳┳┓┏┓┓
+#   Final maintenance for additional development tools             ┣ ┃┃┃┣┫┃
+#                                                                  ┻ ┻┛┗┛┗┗┛
 # ############################################################################
 
 FROM addons-${TARGETARCH} AS addons
